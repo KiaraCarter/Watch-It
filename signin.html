@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+  <style type="text/css">
+    *{
+      text-decoration: none;
+    }
+    .navbar{
+      background: lightpink; font-family: calibri; padding-right: 15px;padding-left: 15px;
+    }
+    .navdiv{
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo a{
+      font-size: 35px; font-weight: 600; color: white;
+    }
+    li{
+      list-style: none; display: inline-block;
+    }
+    li a{
+      color: white; font-size: 18px; font-weight: bold; margin-right: 25px;
+    }
+ 
+    button a{
+      color: white; font-weight: bold; font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+
+        <h1>User Login</h1>
+        <form action="/login" method="post">
+
+          <label for="username">🎞✧˖ °Username✩｡⋆⸜ 🎞✧ </label><br><br>
+          <input type="text" id="username" name="username"><br><br>
+
+          <label for="password">✧˖°📽✧˚Password 📽｡˚✧˖</label><br><br>
+          <input type="password" id="myInput2" name="password" onclick="showFunction()"><br>
+
+          <input type="checkbox" onclick="myFunction2()">Show Password
+
+           <br><br><input type="submit" value="Login"><br>
+
+          <p>Dont Have An Account? <a href="signup.html">SignUp</a></p>
+
+        </form>
+
+<script>
+
+
+
+  //showing passwords:
+
+  function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+  function myFunction2() {
+    var x = document.getElementById("myInput2");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+
+
+  //verification code: Not working >:C
+
+  function sendCode() {
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WonderPetsMovies</title>
+  <style type="text/css">
+    * {
+      text-decoration: none;
+    }
+
+    .navbar {
+      background: lightpink;
+      font-family: calibri;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .navdiv {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo a {
+      font-size: 35px;
+      font-weight: 600;
+      color: white;
+    }
+
+    li {
+      list-style: none;
+      display: inline-block;
+    }
+
+    li a {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 25px;
+    }
+
+   
+
+    button a {
+      color: white;
+      font-weight: bold;
+      font-size: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav id="navigationbar" class="navbar">
+    <div class="navdiv">
+      <div class="logo"><a href="#">WonderPets</a> </div>
+      <ul>
+
+        <li><a href="#movies">Movies</a></li>
+        <li><a href="#randomgen">Generator</a></li>
+        <li><a href="#">About</a></li>
+        <button><a href="signin.html">SignIn</a></button>
+        <button><a href="signup.html">SignUp</a></button>
+      </ul>
+
+    </div>
+  </nav>
+
+  <div class="alert-box">
+    <p class="alert"></p>
+  </div>
+
+
+  <!---MOVIE LIST--->
+
+
+  <h1 id="movies">Movies🍿✨</h1>
+  <div id="movies-list"></div>
+
+
+
+  <!----RANDOM MOVIE GENERATOR--->
+
+  <h1 id="randomgen">( •̯́ ₃ •̯̀) Movie Generator ( •̯́ ₃ •̯̀) </h1>
+
+  <!-- Button to generate random movie -->
+  <button id="generateBtn">Generate Movie</button>
+
+  <!-- Container to display movie details -->
+  <div id="movieDetails">
+    <h2 id="title"></h2>
+    <p><strong>Date of Release:</strong> <span id="releaseDate"></span></p>
+    <img id="movieImage" src="" alt="Movie Image">
+    <p><strong>Genre:</strong> <span id="genre"></span></p>
+    <p><strong>Rating:</strong> <span id="rating"></span></p>
+    <p><strong>Description:</strong> <span id="description"></span></p>
+    <p><strong>Where To Watch Movie:</strong> <span id="watchMovie"></span></p>
+
+    <a href="#navigationbar" ">Back To Top Of Website?</a>
+
+  
+
+  
+
+
+  
+  
+
+  
+<script>
+
+
+  //movie API Rate limit: 1000 requests per hour
+  //API From RapidAPI Used: IMDb Top 100 Movies
+
+
+  async function fetchMovies() {
+    const url = 'https://imdb-top-100-movies.p.rapidapi.com/';
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': 'd1ce8f5e1fmsh7f06d58de720ac7p112d79jsncc237aad41fa',
+        'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
+      }
+    };
+
+    try {
+      const response = await fetch(url, options);
+      const data = await response.json();
+      displayMovies(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function displayMovies(movies) {
+    const moviesList = document.getElementById('movies-list');
+    movies.forEach(movie => {
+      const movieElement = document.createElement('div');
+      movieElement.innerHTML = `
+              <h2>${movie.title} (${movie.year})</h2>
+              <img src=" ${movie.image}" alt="${movie.title}">
+      <p>Genre: ${movie.genre}</p>
+      <p>Rating: ${movie.rating}</p>
+      <h4>Description:<h4>
+          <p>${movie.description}</p><br><br>
+
+          `;
+      moviesList.appendChild(movieElement);
+    });
+  }
+
+  fetchMovies();
+
+
+
+  //random movie generator
+
+  function fetchRandomMovie() {
+
+    fetch('badMovies.txt')
+      .then(response => response.text())
+      .then(data => {
+        const movies = data.split('\n');
+        const randomIndex = Math.floor(Math.random() * movies.length);
+        const randomMovie = movies[randomIndex].split(',');
+
+        document.getElementById('title').textContent = randomMovie[0];
+        document.getElementById('releaseDate').textContent = randomMovie[1];
+        document.getElementById('movieImage').src = randomMovie[2];
+        document.getElementById('genre').textContent = randomMovie[3];
+        document.getElementById('rating').textContent = randomMovie[4];
+        document.getElementById('description').textContent = randomMovie[5];
+        document.getElementById('whereToWatch').textContent = watchMovie[6];
+      })
+      .catch(error => console.error('Error fetching random movie:', error));
+  }
+
+
+  document.getElementById('generateBtn').addEventListener('click', fetchRandomMovie);
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<body>
+
+ 
+  <div class="alert-box">
+      <p class="alert"></p>
+  </div>
+
+
+
+  <h1>Create Account</h1>
+  <form>
+     <form action="/create-account" method="post">
+
+      <label for="name">↻ ◁ |⁺˚⋆｡  Name ༘ ⋆｡ | ▷ ↺<br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="username">🎞✧˖ °Username✩｡⋆⸜ 🎞✧ </label><br>
+      <input type="text" id="username" name="username"><br><br>
+
+        <label for="newPassword">˖°📽✧˚Password 📽｡˚✧˖</label><br> (min.8 characters,1 number)<br>
+         <input type="password" id="myInput2" name="newpassword" pattern="(?=.*\d).{8,}" title="Password must be at least 8 characters long and include at least 1 number" required><br><br>
+
+
+
+        <input type="checkbox" onclick="myFunction2()">Show Password<br><br>
+
+      <label for="newEmail">↻ ◁ |⁺˚⋆｡  Email  ༘ ⋆｡ | ▷ ↺</label><br>
+      <input type="email" id="newEmail" name="newEmail">
+
+
+        <div class="emailverify">
+
+          <input type="text" id="verify" placeholder="Please enter verification">
+          <button class="btn" id="verifybtn">Verify</button><br>
+
+        </div>
+
+
+        <button class="btn" onclick="sendCode()">Send Verification Code</button><br><br>
+
+      <input type="submit" value="Create Account">
+  </form>
+    
+        <p>Already Have An Account? <a href="signin.html">SignIn</a></p>
+
+
+
+<script>
+
+//showing passwords:
+  function myFunction2() {
+    var x = document.getElementById("myInput2");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+
+  //random number generator for email verification
+  let randomNUM = Math.random() * 100;
+
+
+
+</script>
+
+</body>
+</html>
