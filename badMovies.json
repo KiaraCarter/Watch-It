@@ -1,0 +1,862 @@
+{
+  "movies": [
+    {
+      "title": "Goat Story",
+      "imgLink":"https://ibb.co/3r7GNFX",
+      "release_date": "2008",
+      "genre": ["Animation", "Comedy", "Fantasy"],
+      "rating": "4.6/10",
+      "description": "A tale about the life of a goat named Jan and his remarkable adventure."
+    },
+    {
+      "title": "Troll 2",
+      "imgLink":
+      "release_date": "1990",
+      "genre": ["Comedy", "Fantasy", "Horror"],
+      "rating": "2.9/10",
+      "description": "A young boy tries to save his town from vegetarian goblins."
+    },
+    {
+      "title": "Samurai Cop",
+      "imgLink":
+      "release_date": "1991",
+      "genre": ["Action", "Crime", "Thriller"],
+      "rating": "4.5/10",
+      "description": "A samurai-trained cop takes on a dangerous gang."
+    },
+    {
+      "title": "Mac and Me",
+      "imgLink":
+      "release_date": "1988",
+      "genre": ["Adventure", "Family", "Fantasy"],
+      "rating": "3.4/10",
+      "description": "A boy befriends a stranded alien and helps him return home."
+    },
+    {
+      "title": "Velocipastor",
+      "imgLink":
+      "release_date": "2018",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "5.1/10",
+      "description": "A priest transforms into a dinosaur and fights crime."
+    },
+    {
+      "title": "Miami Connection",
+      "imgLink":
+      "release_date": "1987",
+      "genre": ["Action", "Crime", "Thriller"],
+      "rating": "5.8/10",
+      "description": "A martial arts rock band battles drug-dealing ninjas."
+    },
+    {
+      "title": "Nothing But Trouble",
+      "imgLink":
+      "release_date": "1991",
+      "genre": ["Comedy"],
+      "rating": "5.9/10",
+      "description": "A group of travelers face bizarre and dangerous situations in a small town."
+    },
+    {
+      "title": "The Room",
+      "imgLink":
+      "release_date": "2003",
+      "genre": ["Drama"],
+      "rating": "3.7/10",
+      "description": "A man's life falls apart due to his fiancée's infidelity."
+    },
+    {
+      "title": "Space Cop",
+      "imgLink":
+      "release_date": "2016",
+      "genre": ["Action", "Comedy", "Sci-Fi"],
+      "rating": "5.1/10",
+      "description": "A space cop from the future teams up with a present-day cop."
+    },
+    {
+      "title": "Sneezing Baby Panda: The Movie",
+      "imgLink":
+      "release_date": "2015",
+      "genre": ["Family"],
+      "rating": "3.1/10",
+      "description": "A baby panda sneezes and becomes an internet sensation."
+    },
+    {
+      "title": "Kangaroo Jack",
+      "imgLink":
+      "release_date": "2003",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "4.4/10",
+      "description": "Two friends chase a kangaroo across the Outback."
+    },
+    {
+      "title": "Death Wish 3",
+      "imgLink":
+      "release_date": "1985",
+      "genre": ["Action", "Crime", "Drama"],
+      "rating": "5.9/10",
+      "description": "A vigilante takes on a gang in a crime-infested neighborhood."
+    },
+    {
+      "title": "Deadly Invasion: The Killer Bee Nightmare",
+      "imgLink":
+      "release_date": "1995",
+      "genre": ["Horror", "Sci-Fi"],
+      "rating": "4.1/10",
+      "description": "A town is terrorized by killer bees from South America."
+    },
+    {
+      "title": "Summertime Switch",
+      "imgLink":
+      "release_date": "1994",
+      "genre": ["Comedy", "Family"],
+      "rating": "6.3/10",
+      "description": "Two boys from different backgrounds switch lives for the summer."
+    },
+    {
+      "title": "Fateful Findings",
+      "imgLink":
+      "release_date": "2013",
+      "genre": ["Drama", "Fantasy", "Thriller"],
+      "rating": "4.0/10",
+      "description": "A man discovers a magical stone and uncovers government corruption."
+    },
+    {
+      "title": "Space Truckers",
+      "imgLink":
+      "release_date": "1996",
+      "genre": ["Comedy", "Sci-Fi"],
+      "rating": "5.2/10",
+      "description": "Truckers transport cargo through space, facing various dangers."
+    },
+    {
+      "title": "Double Down",
+      "imgLink":
+      "release_date": "2005",
+      "genre": ["Action", "Drama", "Thriller"],
+      "rating": "2.0/10",
+      "description": "A former military operative becomes a professional gambler and vigilante."
+    },
+    {
+      "title": "I Am Here...",
+      "imgLink":
+      "release_date": "2014",
+      "genre": ["Drama", "Sci-Fi"],
+      "rating": "5.0/10",
+      "description": "A woman suffering from multiple personality disorder struggles with her identity."
+    },
+    {
+      "title": "Frankenhooker",
+      "imgLink":
+      "release_date": "1990",
+      "genre": ["Comedy", "Horror", "Sci-Fi"],
+      "rating": "6.1/10",
+      "description": "A medical student reanimates his dead girlfriend using body parts from prostitutes."
+    },
+    {
+      "title": "Tammy and the T-Rex",
+      "imgLink":
+      "release_date": "1994",
+      "genre": ["Comedy", "Fantasy", "Sci-Fi"],
+      "rating": "3.6/10",
+      "description": "A teenager's brain is transplanted into an animatronic T-Rex."
+    };
+  
+    {
+      "title": "Showgirls",
+      "imgLink":
+      "release_date": "1995",
+      "genre": ["Drama"],
+      "rating": "4.9/10",
+      "description": "A young drifter, Nomi, arrives in Las Vegas to become a dancer and soon sets about clawing and pushing her way to become the top of the Vegas showgirls."
+    },
+    
+    {
+      "title": "Bee Movie",
+      "imgLink":
+      "release_date": "2007",
+      "genre": ["Animation", "Adventure", "Comedy"],
+      "rating": "6.1/10",
+      "description": "Barry B. Benson, a bee just graduated from college, is disillusioned at his lone career choice: making honey. On a special trip outside the hive, Barry's life is saved by Vanessa, a florist in New York City. As their relationship blossoms, he discovers humans actually eat honey, and subsequently decides to sue them."
+    },
+    {
+      "title": "Tremors",
+      "imgLink":
+      "release_date": "1990",
+      "genre": ["Comedy", "Horror", "Sci-Fi"],
+      "rating": "7.1/10",
+      "description": "Natives of a small isolated town defend themselves against strange underground creatures which are killing them one by one."
+    },
+    {
+      "title": "Plan 9 From Outer Space",
+      "imgLink":
+      "release_date": "1959",
+      "genre": ["Horror", "Sci-Fi"],
+      "rating": "4.0/10",
+      "description": "Aliens resurrect dead humans as zombies and vampires to stop humanity from creating the Solaranite (a sort of sun-driven bomb)."
+    },
+    {
+      "title": "Balls of Fury",
+      "imgLink":
+      "release_date": "2007",
+      "genre": ["Comedy", "Crime", "Sport"],
+      "rating": "5.2/10",
+      "description": "Down-and-out former professional ping-pong phenom, Randy Daytona, is sucked into a maelstrom when FBI Agent Ernie Rodriguez recruits him for a secret mission."
+    },
+    {
+      "title": "Asterix & Obelix: The Middle Kingdom",
+      "imgLink":
+      "release_date": "2023",
+      "genre": ["Animation", "Action", "Adventure"],
+      "rating": "5.3/10",
+      "description": "The only daughter of the Chinese emperor Han Xuandi, escapes from a strict prince and seeks help from the Gauls and the two brave warriors Asterix and Obelix."
+    },
+    {
+      "title": "Cherry Falls",
+      "imgLink":
+      "release_date": "2000",
+      "genre": ["Horror", "Mystery", "Thriller"],
+      "rating": "5.2/10",
+      "description": "In the small town of Cherry Falls, a psychotic murderer is killing off the virgins of the local high school."
+    },
+    {
+      "title": "Night of the Comet",
+      "imgLink":
+      "release_date": "1984",
+      "genre": ["Comedy", "Horror", "Sci-Fi"],
+      "rating": "6.4/10",
+      "description": "A comet wipes out most of life on Earth, leaving two Valley Girls fighting against cannibal zombies and a sinister group of scientists."
+    },
+    {
+      "title": "The Hot Chick",
+      "imgLink":
+      "release_date": "2002",
+      "genre": ["Comedy", "Fantasy"],
+      "rating": "5.5/10",
+      "description": "An attractive and popular teenager who is mean-spirited toward others finds herself in the body of an older man and must find a way to get back to her original body."
+    },
+    
+    {
+      "title": "Rubber",
+      "imgLink":
+      "release_date": "2010",
+      "genre": ["Comedy", "Horror", "Sci-Fi"],
+      "rating": "5.8/10",
+      "description": "A homicidal car tire, discovering it has destructive psionic power, sets its sights on a desert town once a mysterious woman becomes its obsession."
+    };
+
+   
+        {
+          "title": "Weekend at Bernie’s",
+          "imgLink":
+          "release_date": "1989",
+          "genre": ["Adventure", "Comedy", "Crime"],
+          "rating": "6.4/10",
+          "description": "Two young employees discover their boss is dead but pretend he's alive to keep the weekend party going at his beach house."
+        },
+        {
+          "title": "Dead & Breakfast",
+          "imgLink":
+          "release_date": "2004",
+          "genre": ["Comedy", "Fantasy", "Horror"],
+          "rating": "5.8/10",
+          "description": "A group of friends staying at a bed and breakfast find themselves in a zombie-infested town."
+        },
+        {
+          "title": "Club Dread",
+          "imgLink":
+          "release_date": "2004",
+          "genre": ["Comedy", "Horror", "Thriller"],
+          "rating": "5.6/10",
+          "description": "A serial killer stalks guests at an island resort themed around a slasher movie franchise."
+        },
+        {
+          "title": "Bubba Ho-Tep",
+          "imgLink":
+          "release_date": "2002",
+          "genre": ["Comedy", "Fantasy", "Horror"],
+          "rating": "7.0/10",
+          "description": "An elderly Elvis Presley teams up with a black man who believes himself to be JFK to battle an ancient Egyptian mummy."
+        },
+        {
+          "title": "Spice World",
+          "imgLink":
+          "release_date": "1997",
+          "genre": ["Comedy", "Family", "Music"],
+          "rating": "3.4/10",
+          "description": "A comedic glimpse into the world of the Spice Girls as they prepare for a major concert."
+        },
+        {
+          "title": "Poultrygeist: Night of the Chicken Dead",
+          "imgLink":
+          "release_date": "2006",
+          "genre": ["Comedy", "Horror", "Musical"],
+          "rating": "6.2/10",
+          "description": "Fast-food workers battle zombie chickens infused with a deadly alien virus."
+        },
+        {
+          "title": "Serial Mom",
+          "imgLink":
+          "release_date": "1994",
+          "genre": ["Comedy", "Crime", "Horror"],
+          "rating": "6.6/10",
+          "description": "A seemingly perfect suburban mother turns into a homicidal maniac when anyone threatens her family's happiness."
+        },
+        {
+          "title": "Orca",
+          "imgLink":
+          "release_date": "1977",
+          "genre": ["Adventure", "Drama", "Horror"],
+          "rating": "5.7/10",
+          "description": "A vengeful killer whale goes on a rampage after witnessing the death of its mate and unborn calf."
+        },
+        {
+          "title": "Cool as Ice",
+          "imgLink":
+          "release_date": "1991",
+          "genre": ["Comedy", "Music", "Romance"],
+          "rating": "2.9/10",
+          "description": "A rapper on a motorcycle falls for a small-town girl, leading to a clash with her disapproving father."
+        },
+        {
+          "title": "Mortal Kombat",
+          "imgLink":
+          "release_date": "1995",
+          "genre": ["Action", "Adventure", "Fantasy"],
+          "rating": "5.8/10",
+          "description": "Fighters from Earth defend against an invasion from the Outworld in a martial arts tournament."
+        }
+
+        {
+          "title": "The Punisher",
+          "imgLink":
+          "release_date": "2004",
+          "genre": ["Action", "Crime", "Drama"],
+          "rating": "6.4/10",
+          "description": "A man seeks revenge against the criminals responsible for his family's death, adopting the persona of the Punisher."
+        },
+        {
+          "title": "Mixed Nuts",
+          "imgLink":
+          "release_date": "1994",
+          "genre": ["Comedy", "Drama"],
+          "rating": "5.4/10",
+          "description": "A crisis hotline staff faces various personal and professional challenges during the holiday season."
+        },
+        {
+          "title": "Frozen Assets",
+          "imgLink":
+          "release_date": "1992",
+          "genre": ["Comedy"],
+          "rating": "2.9/10",
+          "description": "A banker sent to a small town to shut down a failing branch finds himself entangled in local affairs."
+        },
+        {
+          "title": "Extreme Movie",
+          "imgLink":
+          "release_date": "2008",
+          "genre": ["Comedy"],
+          "rating": "3.7/10",
+          "description": "A series of comedic vignettes explore themes of teenage sexuality and relationships."
+        },
+        {
+          "title": "Disaster Movie",
+          "imgLink":
+          "release_date": "2008",
+          "genre": ["Comedy"],
+          "rating": "1.9/10",
+          "description": "A spoof film that parodies various disaster movies and pop culture references."
+        },
+        {
+          "title": "Epic Movie",
+          "imgLink":
+          "release_date": "2007",
+          "genre": ["Adventure", "Comedy"],
+          "rating": "2.4/10",
+          "description": "A parody film that lampoons popular fantasy and adventure movies."
+        },
+        {
+          "title": "Panda Fighter",
+          "imgLink":
+          "release_date": "2010",
+          "genre": ["Animation", "Family"],
+          "rating": "2.8/10",
+          "description": "An animated film about a panda who becomes a kung fu master to protect his village."
+        },
+        {
+          "title": "Spider's A Pig's Tale",
+          "imgLink":
+          "release_date": "2006",
+          "genre": ["Animation", "Family"],
+          "rating": "2.4/10",
+          "description": "An animated adventure following a spider who embarks on a journey to rescue his pig friend."
+        },
+        {
+          "title": "Brawl Stars",
+          "imgLink":
+          "release_date": "TBA",
+          "genre": ["Animation", "Action", "Adventure"],
+          "rating": "TBA",
+          "description": "Plot details are currently unavailable."
+        },
+        {
+          "title": "Ratatoing",
+          "imgLink":
+          "release_date": "2007",
+          "genre": ["Animation", "Comedy", "Family"],
+          "rating": "1.6/10",
+          "description": "An animated film about a group of rats who run a restaurant in competition with a larger establishment."
+        },
+
+    {
+      "title": "Strange Magic",
+      "imgLink":
+      "release_date": "2015",
+      "genre": ["Animation", "Adventure", "Comedy"],
+      "rating": "5.8/10",
+      "description": "Strange Magic is a 2015 animated musical fantasy comedy film directed by Gary Rydstrom. It tells the story of a fairy princess who must rescue her sister from an evil ruler. The film features various magical creatures and is filled with music."
+    },
+    {
+      "title": "Millionaire Dogs",
+      "imgLink":
+      "release_date": "2004",
+      "genre": ["Animation", "Family"],
+      "rating": "2.0/10",
+      "description": "Millionaire Dogs is a 2004 animated family film about a group of dogs who inherit a fortune from their owner. The film follows their adventures as they navigate the challenges of their newfound wealth."
+    },
+    {
+      "title": "Speckles: The Tarbosaurus",
+      "imgLink":
+      "release_date": "2012",
+      "genre": ["Animation", "Adventure", "Family"],
+      "rating": "5.5/10",
+      "description": "Speckles: The Tarbosaurus is a 2012 animated adventure film about a young Tarbosaurus who embarks on a journey to find his family after being separated from them. Along the way, he encounters various dangers and learns valuable lessons."
+    },
+    {
+      "title": "A Turtle's Tale: Sammy's Adventures",
+      "imgLink":
+      "release_date": "2010",
+      "genre": ["Animation", "Adventure", "Family"],
+      "rating": "6.0/10",
+      "description": "A Turtle's Tale: Sammy's Adventures is a 2010 animated adventure film that follows the life journey of a sea turtle named Sammy. The film explores Sammy's adventures and challenges as he travels through the oceans and encounters different marine creatures."
+    },
+    {
+      "title": "Foodfight!",
+      "imgLink":
+      "release_date": "2012",
+      "genre": ["Animation", "Action", "Adventure"],
+      "rating": "1.7/10",
+      "description": "Foodfight! is a 2012 animated action-adventure film set in a supermarket. The story follows the adventures of various brand mascots who come to life at night. The film received negative reviews for its animation quality and storyline."
+    },
+    {
+      "title": "Morbius",
+      "imgLink":
+      "release_date": "2022",
+      "genre": ["Action", "Adventure", "Fantasy"],
+      "rating": "5.3/10",
+      "description": "Morbius is a 2022 action-adventure fantasy film based on the Marvel Comics character of the same name. It follows the story of Dr. Michael Morbius, a scientist who accidentally transforms into a vampire-like creature while trying to cure his rare blood disease."
+    },
+    {
+      "title": "Nadia: The Secret Of Fuzzy",
+      "imgLink":
+      "release_date": "2006",
+      "genre": ["Family"],
+      "rating": "6.2/10",
+      "description": "Nadia: The Secret Of Fuzzy is a 2006 family film about a young girl named Nadia who discovers a mysterious creature in the forest. As Nadia befriends the creature, she embarks on an adventure to protect it from those who seek to harm it."
+    },
+    {
+      "title": "The Wicker Man",
+      "imgLink":
+      "release_date": "2006",
+      "genre": ["Horror", "Mystery", "Thriller"],
+      "rating": "3.7/10",
+      "description": "The Wicker Man is a 2006 horror mystery thriller film directed by Neil LaBute and starring Nicolas Cage. It follows a police officer who investigates the disappearance of a young girl on a remote island inhabited by a secretive pagan community."
+    },
+    {
+      "title": "Monkey Shines",
+      "imgLink":
+      "release_date": "1988",
+      "genre": ["Drama", "Horror", "Sci-Fi"],
+      "rating": "6.2/10",
+      "description": "Monkey Shines is a 1988 psychological horror film directed by George A. Romero. It tells the story of a quadriplegic man who forms a telepathic bond with a trained capuchin monkey, leading to sinister consequences."
+    },
+    {
+      "title": "Cellular",
+      "imgLink":
+      "release_date": "2004",
+      "genre": ["Action", "Crime", "Thriller"],
+      "rating": "6.5/10",
+      "description": "Cellular is a 2004 action crime thriller film starring Kim Basinger and Chris Evans. The story follows a young man who receives a desperate phone call from a kidnapped woman and embarks on a race against time to save her."
+    };
+
+    {
+      "title": "Insidious",
+      "imgLink":
+      "release_date": "2010",
+      "genre": ["Horror", "Mystery", "Thriller"],
+      "rating": "6.8/10",
+      "description": "Insidious is a 2010 horror mystery thriller directed by James Wan. The story revolves around a family trying to prevent evil spirits from trapping their comatose child in a realm called The Further. It explores themes of supernatural entities and astral projection [1][2][3]."
+    },
+    {
+      "title": "Ghost Rider",
+      "imgLink":
+      "release_date": "2007",
+      "genre": ["Action", "Fantasy", "Thriller"],
+      "rating": "5.2/10",
+      "description": "Ghost Rider is a 2007 action fantasy thriller film based on the Marvel Comics character of the same name. It follows the story of Johnny Blaze, a stunt motorcyclist who sells his soul to the devil and transforms into the Ghost Rider to battle evil forces [4][5]."
+    },
+    {
+      "title": "The Box",
+      "imgLink":
+      "release_date": "2009",
+      "genre": ["Drama", "Mystery", "Thriller"],
+      "rating": "5.6/10",
+      "description": "The Box is a 2009 psychological thriller film directed by Richard Kelly. It centers on a married couple who receive a mysterious box with a button. They are told that pressing the button will grant them a large sum of money but will also cause the death of someone they don't know [6][7]."
+    },
+    {
+      "title": "Face/Off",
+      "imgLink":
+      "release_date": "1997",
+      "genre": ["Action", "Crime", "Sci-Fi"],
+      "rating": "7.3/10",
+      "description": "Face/Off is a 1997 action crime sci-fi film directed by John Woo. The plot revolves around an FBI agent and a terrorist who undergo face transplant surgery to assume each other's identities. It explores themes of identity, deception, and revenge [8][9]."
+    },
+    {
+      "title": "Shallow Hal",
+      "imgLink":
+      "release_date": "2001",
+      "genre": ["Comedy", "Drama", "Fantasy"],
+      "rating": "6.2/10",
+      "description": "Shallow Hal is a 2001 romantic comedy film directed by the Farrelly brothers. It tells the story of a shallow man who, after being hypnotized, sees inner beauty in women's outer appearances. The film explores themes of perception and true beauty [10][11]."
+    },
+    {
+      "title": "Orphan",
+      "imgLink":
+      "release_date": "2009",
+      "genre": ["Horror", "Mystery", "Thriller"],
+      "rating": "7.0/10",
+      "description": "Orphan is a 2009 psychological horror thriller directed by Jaume Collet-Serra. The film follows a couple who adopts a 9-year-old girl named Esther, only to discover that she is not as innocent as she seems. It explores themes of deception and psychological manipulation [12][13]."
+    },
+    {
+      "title": "Quarantine",
+      "imgLink":
+      "release_date": "2008",
+      "genre": ["Horror", "Mystery", "Sci-Fi"],
+      "rating": "6.0/10",
+      "description": "Quarantine is a 2008 found footage horror thriller directed by John Erick Dowdle. It follows a television reporter and her cameraman who are trapped inside a building quarantined by the CDC after the outbreak of a mysterious virus. The film explores themes of fear and isolation [14][15]."
+    },
+    {
+      "title": "Deep Blue Sea",
+      "imgLink":
+      "release_date": "1999",
+      "genre": ["Action", "Adventure", "Sci-Fi"],
+      "rating": "5.9/10",
+      "description": "Deep Blue Sea is a 1999 science fiction action thriller directed by Renny Harlin. The plot centers on a team of scientists who genetically modify sharks to find a cure for Alzheimer's disease. However, the experiment goes awry, and the sharks become smarter and more dangerous. The film explores themes of scientific ethics and survival [16][17]."
+    },
+    {
+      "title": "Swimfan",
+      "imgLink":
+      "release_date": "2002",
+      "genre": ["Drama", "Thriller"],
+      "rating": "5.0/10",
+      "description": "Swimfan is a 2002 psychological thriller film directed by John Polson. The story follows a high school swimmer who becomes the object of obsession for a disturbed young woman. It explores themes of obsession and manipulation [18][19]."
+    },
+    {
+      "title": "2-Headed Shark Attack",
+      "imgLink":
+      "release_date": "2012",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "2.5/10",
+      "description": "2-Headed Shark Attack is a 2012 action adventure comedy directed by Christopher Ray. The film follows a group of students who become stranded on an island with a genetically mutated shark with two heads. It is a low-budget creature feature film [20][21]."
+    },
+    {
+      "title": "2012: Ice Age",
+      "imgLink":
+      "release_date": "2011",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "1.8/10",
+      "description": "2012: Ice Age is a 2011 action adventure comedy film directed by Travis Fort. It depicts a group of survivors navigating through a world plunged into a new ice age after the catastrophic events of 2012. The film received negative reviews for its low-budget production and visual effects [22][23]."
+    };
+    {
+      "title": "Birdemic: Shock and Terror",
+      "imgLink":
+      "release_date": "2010",
+      "genre": ["Horror", "Romance", "Thriller"],
+      "rating": "1.8/10",
+      "description": "Birdemic: Shock and Terror is a 2010 independent romantic thriller-horror film directed by James Nguyen. It follows a horde of mutated birds that attack the residents of Half Moon Bay, California. The film is notorious for its poor acting, direction, special effects, screenplay, and cinematography [1][2]."
+    },
+    {
+      "title": "Chairman of the Board",
+      "imgLink":
+      "release_date": "1998",
+      "genre": ["Comedy"],
+      "rating": "2.4/10",
+      "description": "Chairman of the Board is a 1998 comedy film starring Carrot Top as a surfer-turned-businessman who inherits a failing company. The film received overwhelmingly negative reviews for its humor and performances [3][4]."
+    },
+    {
+      "title": "Day of the Dead 2: Contagium",
+      "imgLink":
+      "release_date": "2005",
+      "genre": ["Action", "Horror", "Sci-Fi"],
+      "rating": "3.8/10",
+      "description": "Day of the Dead 2: Contagium is a 2005 action horror sci-fi film directed by Ana Clavell and James Glenn Dudelson. It serves as a prequel to George A. Romero's 1985 film Day of the Dead, focusing on the origin of the zombie outbreak in a mental asylum [5][6]."
+    },
+    {
+      "title": "Dinoshark",
+      "imgLink":
+      "release_date": "2010",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "3.1/10",
+      "description": "Dinoshark is a 2010 action adventure comedy film directed by Kevin O'Neill. It follows a prehistoric shark that is released from melting ice caps and terrorizes the waters off a Mexican resort. The film is known for its low-budget production and cheesy special effects [7][8]."
+    },
+    {
+      "title": "Ice Spiders",
+      "imgLink":
+      "release_date": "2007",
+      "genre": ["Horror", "Sci-Fi"],
+      "rating": "4.2/10",
+      "description": "Ice Spiders is a 2007 horror sci-fi film directed by Tibor Takács. The story follows a ski team that must battle giant spiders created by a government experiment gone wrong. The film is noted for its campy premise and B-movie charm [9][10]."
+    },
+    {
+      "title": "Komodo vs. Cobra",
+      "imgLink":
+      "release_date": "2005",
+      "genre": ["Horror", "Sci-Fi"],
+      "rating": "2.9/10",
+      "description": "Komodo vs. Cobra is a 2005 horror sci-fi film directed by Jim Wynorski. It revolves around a genetically engineered Komodo dragon and a giant cobra that terrorize a small town. The film is characterized by its low-budget effects and over-the-top action scenes [11][12]."
+    },
+    {
+      "title": "Lawnmower Man 2: Beyond Cyberspace",
+      "imgLink":
+      "release_date": "1996",
+      "genre": ["Sci-Fi", "Thriller"],
+      "rating": "2.4/10",
+      "description": "Lawnmower Man 2: Beyond Cyberspace is a 1996 sci-fi thriller film directed by Farhad Mann. It is a sequel to the 1992 film The Lawnmower Man and follows a group of hackers who seek to take down a virtual reality corporation. The film was heavily criticized for its poor execution and lackluster plot [13][14]."
+    },
+    {
+      "title": "Mega Piranha",
+      "imgLink":
+      "release_date": "2010",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "2.4/10",
+      "description": "Mega Piranha is a 2010 action adventure comedy film directed by Eric Forsberg. It features giant piranhas attacking Florida after being accidentally released from a Venezuelan river. The film is known for its absurd premise and low-budget special effects [15][16]."
+    },
+    {
+      "title": "Mega Python vs. Gatoroid",
+      "imgLink":
+      "release_date": "2011",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "3.0/10",
+      "description": "Mega Python vs. Gatoroid is a 2011 action adventure comedy film directed by Mary Lambert. It follows a conflict between giant pythons and alligators in the Florida Everglades. The film is celebrated for its campy nature and over-the-top showdowns [17][18]."
+    },
+    {
+      "title": "Mega Snake",
+      "imgLink":
+      "release_date": "2007",
+      "genre": ["Action", "Adventure", "Horror"],
+      "rating": "3.0/10",
+      "description": "Mega Snake is a 2007 action adventure horror film directed by Tibor Takács. It revolves around a giant snake terrorizing a small town after being created by toxic waste. The film is noted for its low-budget effects and creature feature premise [19][20]."
+    },
+    {
+      "title": "Mega Shark vs. Crocosaurus",
+      "imgLink":
+      "release_date": "2010",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "2.5/10",
+      "description": "Mega Shark vs. Crocosaurus is a 2010 action adventure comedy film directed by Christopher Ray. It depicts a battle between a giant shark and a prehistoric crocodile unleashed by volcanic eruptions. The film is renowned for its ridiculous premise and cheesy visual effects [21][22]."
+    },
+    {
+      "title": "Mega Shark vs. Giant Octopus",
+      "imgLink":
+      "release_date": "2009",
+      "genre": ["Action", "Adventure", "Horror"],
+      "rating": "2.5/10",
+      "description": "Mega Shark vs. Giant Octopus is a 2009 action adventure horror film directed by Ace Hannah. The movie features a battle between a massive prehistoric shark and a giant octopus threatening humanity. Despite its intriguing premise, the film received criticism for its low-budget special effects and poor execution [1][2]."
+    },
+    {
+      "title": "Pocket Ninjas",
+      "imgLink":
+      "release_date": "1997",
+      "genre": ["Action", "Comedy", "Family"],
+      "rating": "1.8/10",
+      "description": "Pocket Ninjas is a 1997 action comedy family film directed by Dave Eddy. It follows the adventures of three kids who train to become ninjas to save their school from bullies. The film was heavily panned for its poor acting, juvenile humor, and lackluster production values [3][4]."
+    },
+    {
+      "title": "Sand Sharks",
+      "imgLink":
+      "release_date": "2011",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "2.7/10",
+      "description": "Sand Sharks is a 2011 action adventure comedy film directed by Mark Atkins. It revolves around a horde of monstrous sharks that swim through sand and terrorize a small coastal community. The film is known for its campy premise and B-movie charm [5][6]."
+    },
+    {
+      "title": "Santa and the Ice Cream Bunny",
+      "imgLink":
+      "release_date": "1972",
+      "genre": ["Family", "Fantasy", "Musical"],
+      "rating": "1.5/10",
+      "description": "Santa and the Ice Cream Bunny is a 1972 family fantasy musical film directed by R. Winer. It tells the story of Santa Claus being stranded in Florida and getting help from children and a costumed character named the Ice Cream Bunny. The film is infamous for its bizarre plot and low production quality [7][8]."
+    },
+    {
+      "title": "Sharktopus",
+      "imgLink":
+      "release_date": "2010",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "3.3/10",
+      "description": "Sharktopus is a 2010 action adventure comedy film directed by Declan O'Brien. It follows the creation of a genetically engineered hybrid creature, part shark and part octopus, which goes on a killing spree. The film is noted for its absurd premise and over-the-top action sequences [9][10]."
+    },
+    {
+      "title": "Seventh Moon",
+      "imgLink":
+      "release_date": "2008",
+      "genre": ["Horror", "Thriller"],
+      "rating": "4.7/10",
+      "description": "Seventh Moon is a 2008 horror thriller film directed by Eduardo Sánchez. The movie follows a couple on their honeymoon in China who encounter terrifying creatures during the traditional Ghost Festival. It received praise for its tense atmosphere and effective scares [11][12]."
+    },
+    {
+      "title": "Superman IV: The Quest for Peace",
+      "imgLink":
+      "release_date": "1987",
+      "genre": ["Action", "Adventure", "Sci-Fi", "Fantasy"],
+      "rating": "3.7/10",
+      "description": "Superman IV: The Quest for Peace is a 1987 superhero film directed by Sidney J. Furie. It portrays Superman's quest to rid the world of nuclear weapons, facing off against the villainous Lex Luthor. Despite its noble themes, the film was criticized for its weak script and special effects [13][14]."
+    },
+    {
+      "title": "Swamp Zombies!!!",
+      "imgLink":
+      "release_date": "2005",
+      "genre": ["Horror"],
+      "rating": "3.5/10",
+      "description": "Swamp Zombies!!! is a 2005 horror film directed by Len Kabasinski. The movie follows a group of soldiers sent to investigate a biological research facility in the swamp, where they encounter zombies. It is known for its low-budget production and cheesy horror elements [15][16]."
+    },
+    {
+      "title": "The Amazing Bulk",
+      "imgLink":
+      "release_date": "2012",
+      "genre": ["Action", "Animation", "Comedy"],
+      "rating": "1.7/10",
+      "description": "The Amazing Bulk is a 2012 action animation comedy film directed by Lewis Schoenbrun. It is a parody of superhero films, featuring a scientist who transforms into a giant, indestructible creature. The film received criticism for its amateurish animation and nonsensical plot [17][18]."
+    },
+    {
+      "title": "The Christmas Shoes",
+      "imgLink":
+      "release_date": "2002",
+      "genre": ["Drama", "Family", "Fantasy"],
+      "rating": "6.9/10",
+      "description": "The Christmas Shoes is a 2002 drama family fantasy film directed by Andy Wolk. It tells the story of a young boy trying to buy a pair of shoes for his dying mother for Christmas. Despite mixed reviews, the film resonated with audiences for its emotional themes [19][20]."
+    },
+    {
+      "title": "The Garbage Pail Kids Movie",
+      "imgLink":
+      "release_date": "1987",
+      "genre": ["Adventure", "Comedy", "Family"],
+      "rating": "2.7/10",
+      "description": "The Garbage Pail Kids Movie is a 1987 adventure comedy family film directed by Rod Amateau. It is based on the Garbage Pail Kids trading cards and follows their adventures as they help a boy overcome bullies. The film was heavily criticized for its grotesque characters and crude humor [21][22]."
+    },
+        {
+          "title": "The Star Wars Holiday Special",
+          "imgLink":
+          "release_date": "1978",
+          "genre": ["Adventure", "Family", "Musical"],
+          "rating": "2.2/10"
+        },
+        {
+          "title": "Titanic II"
+          "imgLink":,
+          "release_date": "2010",
+          "genre": ["Action", "Adventure", "Drama"],
+          "rating": "1.6/10"
+        },
+        {
+          "title": "Titanic: The Legend Goes On...",
+          "imgLink":
+          "release_date": "2000",
+          "genre": ["Animation", "Adventure", "Family"],
+          "rating": "2.4/10"
+        },
+        {
+          "title": "Arachnoquake",
+          "imgLink":
+          "release_date": "2012",
+          "genre": ["Action", "Adventure", "Comedy"],
+          "rating": "2.8/10"
+        },
+        {
+          "title": "Labyrinth",
+          "imgLink":
+          "release_date": "1986",
+          "genre": ["Adventure", "Family", "Fantasy"],
+          "rating": "7.4/10"
+        },
+        {
+          "title": "Verotika",
+          "imgLink":
+          "release_date": "2019",
+          "genre": ["Action", "Horror"],
+          "rating": "3.2/10"
+        },
+        {
+          "title": "Howard the Duck",
+          "imgLink":
+          "release_date": "1986",
+          "genre": ["Action", "Adventure", "Comedy"],
+          "rating": "4.7/10"
+        }
+
+    {
+      "title": "The Star Wars Holiday Special",
+      "release_date": "1978",
+      "genre": ["Adventure", "Family", "Musical"],
+      "rating": "2.2/10",
+      "description": "The Star Wars Holiday Special is a 1978 television special set in the Star Wars galaxy. It follows the adventures of Han Solo and Chewbacca as they visit Chewbacca's home planet of Kashyyyk to celebrate Life Day. The special is known for its low quality, awkward performances, and strange variety show segments featuring characters from the original Star Wars trilogy [4][5]."
+    },
+    {
+      "title": "Titanic II",
+      "imgLink":
+      "release_date": "2010",
+      "genre": ["Action", "Adventure", "Drama"],
+      "rating": "1.6/10",
+      "description": "Titanic II is a 2010 disaster film directed by Shane Van Dyke. It imagines a scenario where a replica of the RMS Titanic, named Titanic II, embarks on its maiden voyage a century after the original. The film received widespread criticism for its poor acting, special effects, and unrealistic plot [8][9]."
+    },
+    {
+      "title": "Titanic: The Legend Goes On...",
+      "imgLink":
+      "release_date": "2000",
+      "genre": ["Animation", "Adventure", "Family"],
+      "rating": "2.4/10",
+      "description": "Titanic: The Legend Goes On... is a 2000 animated film directed by Camillo Teti. It is notorious for its attempt to retell the story of the Titanic disaster in an animated format, mixing elements of romance and adventure. The film faced heavy criticism for its poor animation quality and insensitive portrayal of the tragedy [12][13]."
+    },
+    {
+      "title": "Arachnoquake",
+      "imgLink":
+      "release_date": "2012",
+      "genre": ["Action", "Adventure", "Comedy"],
+      "rating": "2.8/10",
+      "description": "Arachnoquake is a 2012 made-for-television horror film directed by Griff Furst. It depicts a group of people in New Orleans dealing with an earthquake that releases giant fire-breathing spiders. The film is known for its campy humor and low-budget special effects [16][17]."
+    },
+    {
+      "title": "Labyrinth",
+      "imgLink":
+      "release_date": "1986",
+      "genre": ["Adventure", "Family", "Fantasy"],
+      "rating": "7.4/10",
+      "description": "Labyrinth is a 1986 fantasy film directed by Jim Henson. It follows a young girl, Sarah, as she navigates a fantastical labyrinth to rescue her baby brother from the Goblin King, played by David Bowie. The film is praised for its imaginative world, puppetry, and memorable music [20][21]."
+    },
+    {
+      "title": "Verotika",
+      "imgLink":
+      "release_date": "2019",
+      "genre": ["Action", "Horror"],
+      "rating": "3.2/10",
+      "description": "Verotika is a 2019 horror anthology film directed by Glenn Danzig. It is based on characters from Danzig's comic book series of the same name and features three separate stories involving horror and eroticism. The film received overwhelmingly negative reviews for its poor acting, dialogue, and disjointed storytelling [24][25]."
+    },
+    {
+      "title": "LAAL SINGH CHADDHA",
+      "imLink":
+      "release_date": " 2022 ",
+      "genre": [" Drama"],
+      "rating": "3.5/10",
+      "description": "LAAL SINGH CHADDHA is the official remake of Forrest Gump. Laal (Aamir Khan) is a person living with intellectual disabilities navigating through a hate-filled world, discovering the meaning of life through war, love, and loss."
+    }
+  ]
+}
+
