@@ -1,69 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignIn</title>
-  <style type="text/css">
-    *{
-      text-decoration: none;
-    }
-    .navbar{
-      background: lightpink; font-family: calibri; padding-right: 15px;padding-left: 15px;
-    }
-    .navdiv{
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .logo a{
-      font-size: 35px; font-weight: 600; color: white;
-    }
-    li{
-      list-style: none; display: inline-block;
-    }
-    li a{
-      color: white; font-size: 18px; font-weight: bold; margin-right: 25px;
-    }
- 
-    button a{
-      color: white; font-weight: bold; font-size: 10px;
-    }
-  </style>
-</head>
+<html>
+<style>
+  body {
+      background-image: url('https://i.pinimg.com/564x/74/78/59/74785914b281a1c6e98002852a60e019.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: black;
+      justify-content: center;
+  }
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background:aliceblue ;
+}
+
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color:#FCF5AB ;
+  outline: none;
+}
+
+
+button {
+  background-color:#582996;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+.cancelbtn {
+  padding: 14px 19px;
+  background-color: #582996;
+}
+
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+
+
+.container {
+  padding: 16px;
+}
+
+
+
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color:#6d12e6;
+  padding-top: 50px;
+}
+
+
+.modal-content {
+  background-color:#72489C;
+
+
+  margin: 5% auto 15% auto;
+  border: 1px solid: #72489C;
+;
+  width: 80%; 
+}
+
+
+
+hr {
+  border: 1px solid #FCF5AB;
+  margin-bottom: 25px;
+}
+
+
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color:darkblue;
+}
+
+
+.close:hover,
+.close:focus {
+  color: aliceblue;
+  cursor: pointer;
+}
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
 <body>
 
-        <h1>User Login</h1>
-        <form action="/login" method="post">
 
-          <label for="username">🎞✧˖ °Username✩｡⋆⸜ 🎞✧ </label><br><br>
-          <input type="text" id="username" name="username"><br><br>
 
-          <label for="password">✧˖°📽✧˚Password 📽｡˚✧˖</label><br><br>
-          <input type="password" id="myInput2" name="password" onclick="showFunction()"><br>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>SignIn</h1>
+      <p>Please enter login information.</p>
+      <hr>
 
-          <input type="checkbox" onclick="myFunction2()">Show Password
 
-           <br><br><input type="submit" value="Login"><br>
 
-          <p>Dont Have An Account? <a href="signup.html">SignUp</a></p>
+      <label for="psw"><b>🎞✧˖ °Username✩｡⋆⸜ 🎞✧</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
 
-        </form>
+      <label for="psw"><b>˖°📽✧˚Password 📽｡˚✧˖</b></label>
+       <input type="password"  placeholder="Enter Password" id="myInput2" name="psw" pattern="(?=.*\d).{8,}" title="Password must be at least 8 characters long and include at least 1 number" required><br>
+
+      <input type="checkbox" onclick="myFunction2()">Show Password<br><br>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+        <p>Dont Have An Account? <a href="signup.html">SignUp</a></p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign In</button>
+      </div>
+    </div>
+  </form>
+</div>
 
 <script>
+  // Get the modal
+  var modal = document.getElementById('id01');
 
-
-
-  //showing passwords:
-
-  function myFunction() {
-    var x = document.getElementById("myInput");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
   }
 
+  //showing passwords:
   function myFunction2() {
     var x = document.getElementById("myInput2");
     if (x.type === "password") {
@@ -72,24 +182,6 @@
       x.type = "password";
     }
   }
-
-
-
-  //verification code: Not working >:C
-
-  function sendCode() {
-
-
-  }
-
-
-
-
-
-
-
-
-
 
 </script>
 
