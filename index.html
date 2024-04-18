@@ -3,188 +3,336 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WonderPetsMovies</title>
-  <link rel="icon" type="image/x-icon" href="https://iconifier.net/iconified/cf_661ec6f4609bc_WatchIt_Logo/favicon.ico" />
-  <style type="text/css">
-    * {
-      text-decoration: none;
+  <title>Home Page</title>
+
+  <style>
+    body {
+      background-image: url('https://i.pinimg.com/564x/74/78/59/74785914b281a1c6e98002852a60e019.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: black;
+      justify-content: center;
     }
 
-    .navbar {
-      background: lightpink;
-      font-family: calibri;
-      padding-right: 15px;
-      padding-left: 15px;
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 10px;
+
     }
 
-    .navdiv {
+    body {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      min-height: 100vh;
     }
 
-    .logo a {
-      font-size: 35px;
-      font-weight: 600;
-      color: white;
+
+    .content {
+      margin-top: 50px;
+      padding: 20px;
     }
 
-    li {
+
+    h1 {
+      position: fixed;
+      top: 10%;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+    }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 75%;
+    }
+
+    .slider-wrapper {
+      position: relative;
+    }
+
+    .slider-wrapper .slide-button {
+      position: absolute;
+      top: 50%;
+      outline: none;
+      border: none;
+      height: 50px;
+      width: 50px;
+      z-index: 5;
+      color: #fff;
+      display: flex;
+      cursor: pointer;
+      font-size: 2.2rem;
+      background: #000;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .slider-wrapper .slide-button:hover {
+      background: #404040;
+    }
+
+    .slider-wrapper .slide-button#prev-slide {
+      left: -25px;
+      display: none;
+    }
+
+    .slider-wrapper .slide-button#next-slide {
+      right: -25px;
+    }
+
+    .slider-wrapper .image-list {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 18px;
+      font-size: 0;
       list-style: none;
-      display: inline-block;
+      margin-bottom: 30px;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
 
-    li a {
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      margin-right: 25px;
+    .slider-wrapper .image-list::-webkit-scrollbar {
+      display: none;
     }
 
-   
+    .slider-wrapper .image-list .image-item {
+      width: 325px;
+      height: 400px;
+      object-fit: cover;
+    }
 
-    button a {
-      color: white;
-      font-weight: bold;
-      font-size: 10px;
+    .container .slider-scrollbar {
+      height: 24px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .slider-scrollbar .scrollbar-track {
+      width: 100%;
+      height: 2px;
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .slider-scrollbar:hover .scrollbar-track {
+      height: 4px;
+    }
+
+    .slider-scrollbar .scrollbar-thumb {
+      position: absolute;
+      background: #000;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      height: 100%;
+      cursor: grab;
+      border-radius: inherit;
+    }
+
+    .slider-scrollbar .scrollbar-thumb:active {
+      cursor: grabbing;
+      height: 8px;
+      top: -2px;
+    }
+
+    .slider-scrollbar .scrollbar-thumb::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -10px;
+      bottom: -10px;
     }
   </style>
 </head>
 
 <body>
 
-  <nav id="navigationbar" class="navbar">
-    <div class="navdiv">
-      <div class="logo"><a href="#">WonderPets</a> </div>
-      <ul>
 
-        <li><a href="#movies">Movies</a></li>
-        <li><a href="#randomgen">Generator</a></li>
-        <li><a href="#">About</a></li>
-        <button><a href="signin.html">SignIn</a></button>
-        <button><a href="signup.html">SignUp</a></button>
-      </ul>
 
-    </div>
+  <nav>
+    <a href="signup.html" style="color: black; font-weight: bold;" onmouseover="this.style.color='white';"
+      onmouseout="this.style.color='black';">Signup/Login</a> |
+
+    <a href="movies.html" style="color: black; font-weight: bold;" onmouseover="this.style.color='white';"
+      onmouseout="this.style.color='black';">Movies</a> |
+
+
+    <a href="about.html" style="color: black; font-weight: bold;" onmouseover="this.style.color='white';"
+      onmouseout="this.style.color='black';">About</a>
   </nav>
 
-  <div class="alert-box">
-    <p class="alert"></p>
+
+
+  <br><br>
+
+  <h1 style="text-align: center;">Top 10 Movies of 2024</h1>
+
+  <div class="container">
+    <div class="slider-wrapper">
+      <button id="prev-slide" class="slide-button material-symbols-rounded">
+        < </button>
+
+          <ul class="image-list">
+
+            <a href="dune.html"><img class="image-item"
+                src="https://deadline.com/wp-content/uploads/2024/02/Dune-Part-Two-Dolby-Poster.jpg?w=800"
+                alt="movie1" /></a>
+
+            <a href="kungfupanda4.html"><img class="image-item"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdCj9AYyn32nSp-2Pn3gY72IM_4idm8BRpdCF4luHlwg&s"
+                alt="movie2" /></a>
+
+            <a href="godzilla-kong.html"><img class="image-item"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2qEL7ItXVKW6CHTTyYl4wdS0-2yRwIO4JH-Vkly1MZA&s"
+                alt="movie3" /></a>
+
+            <a href="ghost.html"><img class="image-item"
+                src="https://m.media-amazon.com/images/M/MV5BNGE5MWJmZWYtN2ZlMi00ZjY1LTlhYTUtMzQ2Y2IxZWQyYTA2XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg"
+                alt="movie4" /></a>
+
+            <a href="bob.html"><img class="image-item"
+                src="https://m.media-amazon.com/images/M/MV5BMGQyMjVmY2UtYzI0Zi00OWQ5LWI0MzgtZjg4M2U0ZDM5Mzk0XkEyXkFqcGdeQXVyMjMyMzI4MzY@._V1_FMjpg_UX1000_.jpg"
+                alt="movie5" /></a>
+
+            <a href="mean.html"><img class="image-item"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMiHjWC-FHefuERz7J_v_mosOko4kI2oyA4yb3kcWv4g&s"
+                alt="movie6" /></a>
+
+            <a href="beekeeper.html"><img class="image-item"
+                src="https://lh3.googleusercontent.com/proxy/YFn3AAC_N_EcWBUODxGNyQpG6Kef8lqoonOLHsL7n7h-Bqsj8FWNEnGeDuBT5r38ITnMHNvVbIGpyfXRPXtQ4p_R5Bhjlg"
+                alt="movie7" /></a>
+
+            <a href="argylle.html"><img class="image-item"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs0ADGsFGPD_3eeGQo2xLkTDMG8a6hhoqf4qKOsVYcGg&s"
+                alt="movie8" /></a>
+
+            <a href="madameWeb.html"><img class="image-item"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0qmJFrgBmgS_T0yhiw53OGWlZqCZdrO6kDyIch00jgA&s"
+                alt="movie9" /></a>
+
+            <a href="nightswim.html"><img class="image-item"
+                src="https://lh3.googleusercontent.com/proxy/QQ7BrRyTba2q9cHM_UIlqKcRPg3PqBt1TGs1IyR3b97QCUS1jD_fZyYxYWjCau82u0-ufTebOl9RYleO5Bb3w-mrsCoVchbJ6Y32xw"
+                alt="movie10" /></a>
+
+          </ul>
+          <button id="next-slide" class="slide-button material-symbols-rounded">
+            >
+          </button>
+    </div>
+    <div class="slider-scrollbar">
+      <div class="scrollbar-track">
+        <div class="scrollbar-thumb"></div>
+      </div>
+    </div>
   </div>
 
 
-  <!---MOVIE LIST--->
 
 
-  <h1 id="movies">Movies🍿✨</h1>
-  <div id="movies-list"></div>
+  <script> const initSlider = () => {
+      const imageList = document.querySelector(".slider-wrapper .image-list");
+      const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+      const sliderScrollbar = document.querySelector(".container .slider-scrollbar");
+      const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+      const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
 
-
-  <!----RANDOM MOVIE GENERATOR--->
-
-  <h1 id="randomgen">( •̯́ ₃ •̯̀) Movie Generator ( •̯́ ₃ •̯̀) </h1>
-
-  <!-- Button to generate random movie -->
-  <button id="generateBtn">Generate Movie</button>
-
-  <!-- Container to display movie details -->
-  <div id="movieDetails">
-    <h2 id="title"></h2>
-    <p><strong>Date of Release:</strong> <span id="releaseDate"></span></p>
-    <img id="movieImage" src="" alt="Movie Image">
-    <p><strong>Genre:</strong> <span id="genre"></span></p>
-    <p><strong>Rating:</strong> <span id="rating"></span></p>
-    <p><strong>Description:</strong> <span id="description"></span></p>
-    <p><strong>Where To Watch Movie:</strong> <span id="watchMovie"></span></p>
-
-    <a href="#navigationbar" ">Back To Top Of Website?</a>
-
-  
-
-  
+      scrollbarThumb.addEventListener("mousedown", (e) => {
+        const startX = e.clientX;
+        const thumbPosition = scrollbarThumb.offsetLeft;
+        const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
 
 
-  
-  
+        const handleMouseMove = (e) => {
+          const deltaX = e.clientX - startX;
+          const newThumbPosition = thumbPosition + deltaX;
 
-  
-<script>
+          const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+          const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
 
+          scrollbarThumb.style.left = `${boundedPosition}px`;
+          imageList.scrollLeft = scrollPosition;
+        }
 
-  //movie API Rate limit: 1000 requests per hour
-  //API From RapidAPI Used: IMDb Top 100 Movies
+        const handleMouseUp = () => {
+          document.removeEventListener("mousemove", handleMouseMove);
+          document.removeEventListener("mouseup", handleMouseUp);
+        }
 
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseup", handleMouseUp);
+      });
 
-  async function fetchMovies() {
-    const url = 'https://imdb-top-100-movies.p.rapidapi.com/';
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': 'd1ce8f5e1fmsh7f06d58de720ac7p112d79jsncc237aad41fa',
-        'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
+      slideButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          const direction = button.id === "prev-slide" ? -1 : 1;
+          const scrollAmount = imageList.clientWidth * direction;
+          imageList.scrollBy({left: scrollAmount, behavior: "smooth"});
+        });
+      });
+
+      const handleSlideButtons = () => {
+        slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+        slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
       }
-    };
 
-    try {
-      const response = await fetch(url, options);
-      const data = await response.json();
-      displayMovies(data);
-    } catch (error) {
-      console.error(error);
+      const updateScrollThumbPosition = () => {
+        const scrollPosition = imageList.scrollLeft;
+        const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+        scrollbarThumb.style.left = `${thumbPosition}px`;
+      }
+
+      imageList.addEventListener("scroll", () => {
+        updateScrollThumbPosition();
+        handleSlideButtons();
+      });
     }
-  }
+    window.addEventListener("resize", initSlider);
+    window.addEventListener("load", initSlider);
 
-  function displayMovies(movies) {
-    const moviesList = document.getElementById('movies-list');
-    movies.forEach(movie => {
-      const movieElement = document.createElement('div');
-      movieElement.innerHTML = `
-              <h2>${movie.title} (${movie.year})</h2>
-              <img src=" ${movie.image}" alt="${movie.title}">
-      <p>Genre: ${movie.genre}</p>
-      <p>Rating: ${movie.rating}</p>
-      <h4>Description:<h4>
-          <p>${movie.description}</p><br><br>
+  </script>
 
-          `;
-      moviesList.appendChild(movieElement);
-    });
-  }
+</body>
+<!DOCTYPE html>
+<html>
 
-  fetchMovies();
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 
+  <p style="text-align: center; font-size:larger; font-weight: bold; position: fixed; bottom: 0; width: 100%;">Copyright
+    WatchIt! @2024</p>
+</head>
 
-
-  //random movie generator
-
-  function fetchRandomMovie() {
-
-    fetch('badMovies.txt')
-      .then(response => response.text())
-      .then(data => {
-        const movies = data.split('\n');
-        const randomIndex = Math.floor(Math.random() * movies.length);
-        const randomMovie = movies[randomIndex].split(',');
-
-        document.getElementById('title').textContent = randomMovie[0];
-        document.getElementById('releaseDate').textContent = randomMovie[1];
-        document.getElementById('movieImage').src = randomMovie[2];
-        document.getElementById('genre').textContent = randomMovie[3];
-        document.getElementById('rating').textContent = randomMovie[4];
-        document.getElementById('description').textContent = randomMovie[5];
-        document.getElementById('whereToWatch').textContent = watchMovie[6];
-      })
-      .catch(error => console.error('Error fetching random movie:', error));
-  }
-
-
-  document.getElementById('generateBtn').addEventListener('click', fetchRandomMovie);
-
-
-</script>
+<body>
 
 </body>
 
