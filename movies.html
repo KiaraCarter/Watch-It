@@ -7,86 +7,100 @@
   <title>Movies - WatchIt!</title>
   <style>
     body {
-      background-image: url('https://www.openaccessgovernment.org/wp-content/uploads/2021/03/dreamstime_xxl_112068991-1920x1281.jpg');
+      background-image: url('https://i.pinimg.com/originals/95/20/81/9520817e73ef40dde06f6097ff7cc1f3.jpg');
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      background-size: cover;
       color: #fff;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
     }
 
     nav {
       width: 100%;
-      background-color: #444;
+      background-color: rgba(68, 68, 68, 0.85);
       color: white;
       padding: 10px 0;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      z-index: 1000;
     }
 
     nav a {
       color: white;
       padding: 12px 20px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      background-color: #666;
+      color: #5CDB95;
     }
 
     .generator {
-      width: 100%;
-      background-color: #555;
-      padding: 10px 0;
-      text-align: center;
+      margin-top: 60px;
+      width: 80%;
+      background-color: rgba(85, 85, 85, 0.3);
+      padding: 10px;
+      border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      transition: background-color 0.3s ease;
     }
 
     button {
       padding: 10px 20px;
-      background-color: #5CDB95;
-      border: none;
+      background-color: #86e4b0;
+      border: 5px solid rgba(255, 255, 255, 0.3);
       border-radius: 5px;
       cursor: pointer;
       color: #000;
-      transition: background-color 0.3s ease;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     button:hover {
       background-color: #379683;
+      transform: scale(1.05);
     }
 
     .container {
-      padding: 20px;
-      text-align: center;
-      width: 90%;
+      padding: 50px 0;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      align-items: stretch;
     }
 
     .movie {
-      margin: 20px;
       padding: 20px;
-      display: inline-block;
-      width: 200px;
-      background-color: #222;
+      background-color: rgba(34, 34, 34, 0.85);
       border-radius: 8px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .movie:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
     }
 
     .movie img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       border-radius: 4px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     footer {
@@ -95,8 +109,9 @@
       text-align: center;
       padding: 10px;
       width: 100%;
-      position: absolute;
+      position: fixed;
       bottom: 0;
+      left: 0;
     }
   </style>
 </head>
@@ -104,16 +119,20 @@
 <body>
   <nav>
     <a href="index.html">Home</a>
-    <a href="movies.html">Movies</a>
+    <a href="">Movies</a>
     <a href="about.html">About</a>
   </nav>
 
-  <div class="generator">
+  <h1>Discover a Random Movie</h1>
+  <div id="generator" class="generator">
+
+
+
     <button onclick="generateRandomMovie()">Randomize Movie</button>
   </div>
 
   <div class="container">
-    <h1>Discover a Random Movie</h1>
+
     <div id="random-movie-container">
 
       <h3 id="movie-title">Movie Title</h3>
