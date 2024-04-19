@@ -5,15 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
-
   <style>
     body {
-      background-image: url('https://i.pinimg.com/564x/74/78/59/74785914b281a1c6e98002852a60e019.jpg');
+      background-image: url('https://images4.alphacoders.com/132/1321259.png');
       background-size: cover;
       background-position: center;
       font-family: Arial, sans-serif;
       color: black;
+      display: flex;
+      align-items: center;
       justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
     }
 
     nav {
@@ -21,22 +25,7 @@
       top: 0;
       right: 0;
       padding: 10px;
-
     }
-
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-
-
-    .content {
-      margin-top: 50px;
-      padding: 20px;
-    }
-
 
     h1 {
       position: fixed;
@@ -46,24 +35,10 @@
       text-align: center;
     }
 
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-
-    }
-
     .container {
       max-width: 1100px;
       width: 75%;
+      margin-top: 50px;
     }
 
     .slider-wrapper {
@@ -93,23 +68,12 @@
       background: #404040;
     }
 
-    .slider-wrapper .slide-button#prev-slide {
-      left: -25px;
-      display: none;
-    }
-
-    .slider-wrapper .slide-button#next-slide {
-      right: -25px;
-    }
-
     .slider-wrapper .image-list {
-      display: grid;
-      grid-template-columns: repeat(10, 1fr);
-      gap: 18px;
-      font-size: 0;
-      list-style: none;
-      margin-bottom: 30px;
+      display: flex;
       overflow-x: auto;
+      gap: 18px;
+      padding: 10px 0;
+      list-style: none;
       scrollbar-width: none;
     }
 
@@ -121,6 +85,10 @@
       width: 325px;
       height: 400px;
       object-fit: cover;
+      border: 2px solid #fff;
+      /* Adds a white border */
+      border-radius: 5px;
+      /* Optional: Rounds the corners */
     }
 
     .container .slider-scrollbar {
@@ -146,8 +114,6 @@
     .slider-scrollbar .scrollbar-thumb {
       position: absolute;
       background: #000;
-      top: 0;
-      bottom: 0;
       width: 50%;
       height: 100%;
       cursor: grab;
@@ -159,57 +125,48 @@
       height: 8px;
       top: -2px;
     }
-
-    .slider-scrollbar .scrollbar-thumb::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: -10px;
-      bottom: -10px;
-    }
   </style>
 </head>
 
 <body>
 
-
-
   <nav>
-    <a href="signup.html" style="color: black; font-weight: bold;" onmouseover="this.style.color='white';"
-      onmouseout="this.style.color='black';">Signup/Login</a> |
+    <a href="signup.html" style="color: darkgrey; font-weight: bold;" onmouseover="this.style.color='white';"
+      onmouseout="this.style.color='grey';">Signup/Login</a> |
 
-    <a href="movies.html" style="color: black; font-weight: bold;" onmouseover="this.style.color='white';"
-      onmouseout="this.style.color='black';">Movies</a> |
+    <a href="movies.html" style="color: darkgray; font-weight: bold;" onmouseover="this.style.color='white';"
+      onmouseout="this.style.color='grey';">Movies</a> |
 
 
-    <a href="about.html" style="color: black; font-weight: bold;" onmouseover="this.style.color='white';"
-      onmouseout="this.style.color='black';">About</a>
+    <a href="about.html" style="color: darkgray; font-weight: bold;" onmouseover="this.style.color='white';"
+      onmouseout="this.style.color='grey';">About</a>
   </nav>
 
 
 
   <br><br>
 
-  <h1 style="text-align: center;">Top 10 Movies of 2024</h1>
+  <h1 style="text-align: center;color: black;">Top 10 Movies of 2024</h1>
 
   <div class="container">
+
     <div class="slider-wrapper">
-      <button id="prev-slide" class="slide-button material-symbols-rounded">
-        < </button>
+     
+      
 
           <ul class="image-list">
+            
 
             <a href="dune.html"><img class="image-item"
                 src="https://deadline.com/wp-content/uploads/2024/02/Dune-Part-Two-Dolby-Poster.jpg?w=800"
                 alt="movie1" /></a>
 
             <a href="kungfupanda4.html"><img class="image-item"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdCj9AYyn32nSp-2Pn3gY72IM_4idm8BRpdCF4luHlwg&s"
+                src="https://xl.movieposterdb.com/24_02/2024/21692408/xl_kung-fu-panda-4-movie-poster_f379c925.jpg"
                 alt="movie2" /></a>
 
             <a href="godzilla-kong.html"><img class="image-item"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2qEL7ItXVKW6CHTTyYl4wdS0-2yRwIO4JH-Vkly1MZA&s"
+                src="https://m.media-amazon.com/images/M/MV5BMzk2ZmYxNTUtODlhMi00NzE2LTkwMTctYjg0ODQ1ZjkyNzJmXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg"
                 alt="movie3" /></a>
 
             <a href="ghost.html"><img class="image-item"
@@ -221,7 +178,7 @@
                 alt="movie5" /></a>
 
             <a href="mean.html"><img class="image-item"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMiHjWC-FHefuERz7J_v_mosOko4kI2oyA4yb3kcWv4g&s"
+                src="https://lh3.googleusercontent.com/proxy/VkrP3O1hjjgz9_jwW3xGAvr_x9FcvsDgyXzXvSAR8CGeJ5YrzA9VG-Do6t2u9R8rU0ujQWK7EHeFBHBWoOhQ3joaVuYcTJo"
                 alt="movie6" /></a>
 
             <a href="beekeeper.html"><img class="image-item"
@@ -229,21 +186,23 @@
                 alt="movie7" /></a>
 
             <a href="argylle.html"><img class="image-item"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs0ADGsFGPD_3eeGQo2xLkTDMG8a6hhoqf4qKOsVYcGg&s"
-                alt="movie8" /></a>
+                src="https://image.tmdb.org/t/p/original/lL7IbvnrsNMmsSjE6q1xMaDXkHB.jpg" alt="movie8" /></a>
 
             <a href="madameWeb.html"><img class="image-item"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0qmJFrgBmgS_T0yhiw53OGWlZqCZdrO6kDyIch00jgA&s"
-                alt="movie9" /></a>
+                src="https://image.tmdb.org/t/p/original/i6yYcZ5sGHHM2l6dIgt2nZov7Hh.jpg" alt="movie9" /></a>
 
             <a href="nightswim.html"><img class="image-item"
                 src="https://lh3.googleusercontent.com/proxy/QQ7BrRyTba2q9cHM_UIlqKcRPg3PqBt1TGs1IyR3b97QCUS1jD_fZyYxYWjCau82u0-ufTebOl9RYleO5Bb3w-mrsCoVchbJ6Y32xw"
                 alt="movie10" /></a>
 
           </ul>
-          <button id="next-slide" class="slide-button material-symbols-rounded">
-            >
-          </button>
+          
+
+     
+
+
+
+
     </div>
     <div class="slider-scrollbar">
       <div class="scrollbar-track">
@@ -334,6 +293,9 @@
 
 <body>
 
+</body>
+
+</html>
 </body>
 
 </html>
