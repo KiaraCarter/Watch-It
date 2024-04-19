@@ -1,208 +1,205 @@
 <!DOCTYPE html>
 <html>
-<style>
-  body {
-      background-image: url('https://i.pinimg.com/564x/74/78/59/74785914b281a1c6e98002852a60e019.jpg');
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sign Up</title>
+  <style>
+    body {
+      background-image: url('https://img.goodfon.com/wallpaper/nbig/2/c4/art-vid-peyzazh-gory-skaly.webp');
+      
       background-size: cover;
       background-position: center;
       font-family: Arial, sans-serif;
       color: black;
+      display: flex;
       justify-content: center;
-  }
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
 
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+    .modal-content {
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 400px;
+      margin: auto;
+    }
 
+    h1 {
+      color: #3C3054;
+      /* Thematic purple color */
+      text-align: center;
+      margin-bottom: 10px;
+    }
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background:aliceblue ;
-}
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
+    hr {
+      margin-bottom: 25px;
+    }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color:#FCF5AB ;
-  outline: none;
-}
+    input[type=text],
+    input[type=password] {
+      width: calc(100% - 30px);
+      /* Full width minus padding */
+      padding: 15px;
+      margin-bottom: 20px;
+      display: inline-block;
+      border: 1px solid #ddd;
+      /* Subtle border */
+      border-radius: 4px;
+      /* Rounded borders */
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      /* Inner shadow for depth */
+    }
 
+    input[type=text]:focus,
+    input[type=password]:focus {
+      border-color: #582996;
+      /* Highlighted border color */
+      box-shadow: 0 0 8px rgba(88, 41, 150, 0.6);
+      /* Glow effect on focus */
+    }
 
-button {
-  background-color:#582996;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
+    .cancelbtn,
+    .signupbtn {
+      padding: 14px 20px;
+      border-radius: 4px;
+      /* Match input border-radius */
+      border: none;
+      /* Remove borders */
+      cursor: pointer;
+      width: 100%;
+      /* Full width buttons */
+    }
 
-button:hover {
-  opacity:1;
-}
+    .cancelbtn {
+      background-color: #542D4A;
+      /* Neutral cancel button */
+      margin-right: 5px;
+    }
 
+    .signupbtn {
+      background-color: #D98C9E;
+      /* Thematic purple background */
+      color: white;
+      /* White text for readability */
+      margin-left: 5px;
+    }
 
-.cancelbtn {
-  padding: 14px 19px;
-  background-color: #582996;
-}
+    .cancelbtn:hover {
+      background-color: #5B3856;
+      /* Darker on hover */
+    }
 
+    .signupbtn:hover {
+      background-color: #C98EAE;
+      /* Lighter purple on hover */
+    }
 
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
+    .clearfix {
+      overflow: auto;
+    }
 
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
 
+    .checkbox-container {
+      margin-bottom: 15px;
+    }
 
-.container {
-  padding: 16px;
-}
+    .checkbox-container label {
+      margin-left: 5px;
+    }
 
+    a {
+      color: #582996;
+      text-decoration: underline;
+    }
 
+    a:hover {
+      color: #725AC1;
+    }
 
-.modal {
-  display: none;
-  position: fixed; 
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color:#6d12e6;
-  padding-top: 50px;
-}
+    @media screen and (max-width: 300px) {
 
+      .cancelbtn,
+      .signupbtn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
 
-.modal-content {
-  background-color:#72489C;
-
-
-  margin: 5% auto 15% auto;
-  border: 1px solid: #72489C;
-;
-  width: 80%; 
-}
-
-
-
-hr {
-  border: 1px solid #FCF5AB;
-  margin-bottom: 25px;
-}
-
-
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color:darkblue;
-}
-
-
-.close:hover,
-.close:focus {
-  color: aliceblue;
-  cursor: pointer;
-}
-
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-
-
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
-</style>
 <body>
-
-
-
-  <form class="modal-content" action="/action_page.php">
-    <div class="container">
+        <div class="modal-content">
+        <form action="/movies.html">
+          
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
-
-
-
-      <label for="psw"><b>🎞✧˖ °Username✩｡⋆⸜ 🎞✧</b></label>
+      
+      <label for="username" <b>🎞✧˖ °Username✩｡⋆⸜ 🎞✧</b></label>
       <input type="text" placeholder="Enter Username" name="username" required>
-
-
-      <label for="email"><b>↻ ◁ |⁺˚⋆｡  Email  ༘ ⋆｡ | ▷ ↺</b></label>
+      <label for="email">b>↻ ◁ |⁺˚⋆｡ Email ༘ ⋆｡ | ▷ ↺</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
 
+    
       <label for="psw"><b>˖°📽✧˚Password 📽｡˚✧˖</b></label>
-       <input type="password"  placeholder="Enter Password" id="myInput2" name="psw" pattern="(?=.*\d).{8,}" title="Password must be at least 8 characters long and include at least 1 number" required><br>
-
-      <input type="checkbox" onclick="myFunction2()">Show Password<br><br>
-
-      <label for="psw-repeat"><b>🎞️✮⋆˙Repeat Password🎞️✮⋆˙</b></label>
-      <input type="password" placeholder="Repeat Password" id= "myInput3" name="psw-repeat" required>
-
-      <input type="checkbox" onclick="myFunction3()">Show Password<br>
-
-
-      <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-      </label>
-
-      <p>Already Have An Account? <a href="signin.html">SignIn</a>
-
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+      <input type="password" placeholder="Enter Password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+      <div class="checkbox-container">
+        <input type="checkbox" onclick="togglePasswordVisibility('psw')"> Show Password
       </div>
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" id="psw-repeat" name="psw-repeat" required>
+      <div class="checkbox-container">
+        <input type="checkbox" onclick="togglePasswordVisibility('psw-repeat')"> Show Password
+
+      </div>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      <p>Already have an account? <a href="signin.html">Sign in</a>.</p>
+      <div class="clearfix">
+        
+        <a href= "index.html">
+        <button type="button" class="cancelbtn">Cancel</button></a>
+
+
+      
+        
+           <button type="submit" class="signupbtn" >Sign Up</button>
+        
+      </div>
+
+        
     </div>
+   
   </form>
-</div>
-
-<script>
-  // Get the modal
-  var modal = document.getElementById('id01');
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+  <script>
+    function togglePasswordVisibility(inputId) {
+      var input = document.getElementById(inputId);
+      if (input.type === "password") {
+        input.type = "text";
+      } else {
+        input.type = "password";
+      }
     }
-  }
 
-  //showing passwords:
-  function myFunction2() {
-    var x = document.getElementById("myInput2");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
-
-  //showing passwords:
-  function myFunction3() {
-    var x = document.getElementById("myInput3");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
-</script>
-
+  
+  </script>
 </body>
+
 </html>
