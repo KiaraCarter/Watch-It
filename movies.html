@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies - WatchIt!</title>
+  <style>
+    body {
+      background-image: url('https://www.openaccessgovernment.org/wp-content/uploads/2021/03/dreamstime_xxl_112068991-1920x1281.jpg');
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    nav {
+      width: 100%;
+      background-color: #444;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #666;
+    }
+
+    .generator {
+      width: 100%;
+      background-color: #555;
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #5CDB95;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #000;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #379683;
+    }
+
+    .container {
+      padding: 20px;
+      text-align: center;
+      width: 90%;
+    }
+
+    .movie {
+      margin: 20px;
+      padding: 20px;
+      display: inline-block;
+      width: 200px;
+      background-color: #222;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .movie:hover {
+      transform: translateY(-5px);
+    }
+
+    .movie img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <div class="generator">
+    <button onclick="generateRandomMovie()">Randomize Movie</button>
+  </div>
+
+  <div class="container">
+    <h1>Discover a Random Movie</h1>
+    <div id="random-movie-container">
+
+      <h3 id="movie-title">Movie Title</h3>
+      <img id="movie-image" src="" alt="Movie Poster" style="max-width: 200px;">
+      <p id="movie-release">Release Year</p>
+      <p id="movie-genre">Genre</p>
+      <p id="movie-rating">Rating</p>
+      <p id="movie-description">Description</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2024 WatchIt! All rights reserved.
+  </footer>
+
+  <script>
+    const movies = [
+      {
+        title: "Goat Story",
+        image: "https://th.bing.com/th/id/OIP.BaSH6jQ1EIiZoHwXGxKM7QHaLH?rs=1&pid=ImgDetMain",
+        release: 2008,
+        genre: "Animation, Comedy, Fantasy",
+        rating: "4.6/10",
+        description: "A tale about the life of a goat named Jan and his remarkable adventure."
+      },
+      {
+        title: "Troll 2",
+        image: "https://m.media-amazon.com/images/M/MV5BZmQ4MzZlZTAtNDRhMC00MTQ2LTkyN2YtNTQ1ZTliM2UwMWNhXkEyXkFqcGdeQXVyMTQ2MjQyNDc@._V1_FMjpg_UX1000_.jpg",
+        release: 1990,
+        genre: "Comedy, Fantasy, Horror",
+        rating: "2.9/10",
+        description: "A young boy tries to save his town from vegetarian goblins."
+      },
+      {
+        title: "Samurai Cop",
+        image: "https://www.themoviedb.org/t/p/original/tBQGqJFx9u58NKOrlZoy0yTYXRn.jpg",
+        release: 1991,
+        genre: "Action, Crime, Thriller",
+        rating: "4.5/10",
+        description: "A samurai-trained cop takes on a dangerous gang."
+      },
+      {
+        title: "Mac and Me",
+        image: "https://th.bing.com/th/id/OIP.C5NiKjjwnFBU5vnyUsp9xgHaNS?rs=1&pid=ImgDetMain",
+        release: 1988,
+        genre: "Adventure, Family, Fantasy",
+        rating: "3.4/10",
+        description: "A boy befriends a stranded alien and helps him return home."
+      },
+      {
+        title: "Velocipastor",
+        image: "https://th.bing.com/th/id/OIP.YsyHX4RVWFQ1TON809NeMAHaLH?rs=1&pid=ImgDetMain",
+        release: 2018,
+        genre: "Action, Adventure, Comedy",
+        rating: "5.1/10",
+        description: "A priest transforms into a dinosaur and fights crime."
+      },
+      {
+        title: "Miami Connection",
+        image: "https://th.bing.com/th/id/R.0a2ad6b164a895bd2f46ca056a2ed9df?rik=wVGHvNmt5rLGDw&riu=http%3a%2f%2fwww.impawards.com%2f1987%2fposters%2fmiami_connection_xlg.jpg&ehk=opnQ4l%2bYFL1VSe1NZHZMKUUq5xHllkBq056kyYN4PwQ%3d&risl=&pid=ImgRaw&r=0",
+        release: 1987,
+        genre: "Action, Crime, Thriller",
+        rating: "5.8/10",
+        description: "A martial arts rock band battles drug-dealing ninjas."
+      },
+      {
+        title: "Nothing But Trouble",
+        image: "https://th.bing.com/th/id/R.4b3bf0810779f791d49b54496e143d5d?rik=czJzQrHwn4S%2fag&pid=ImgRaw&r=0",
+        release: 1991,
+        genre: "Comedy",
+        rating: "5.9/10",
+        description: "A group of travelers face bizarre and dangerous situations in a small town."
+      },
+      {
+        title: "The Room",
+        image: "https://media-cache.cinematerial.com/p/500x/bhx087ub/the-room-movie-poster.jpg?v=1565398570",
+        release: 2003,
+        genre: "Drama",
+        rating: "3.7/10",
+        description: "A man's life falls apart due to his fiancée's infidelity."
+      },
+      {
+        title: "Space Cop",
+        image: "https://th.bing.com/th/id/R.b82e90503479fe797c0a25f34037b552?rik=5HpXHua4hXFu1g&pid=ImgRaw&r=0",
+        release: 2016,
+        genre: "Action, Comedy, Sci-Fi",
+        rating: "5.1/10",
+        description: "A space cop from the future teams up with a present-day cop."
+      },
+      {
+        title: "Sneezing Baby Panda: The Movie",
+        image: "https://th.bing.com/th/id/OIP.eNPPJlGj6sEcESGHkFDTHQHaJ4?rs=1&pid=ImgDetMain",
+        release: 2015,
+        genre: "Family",
+        rating: "3.1/10",
+        description: "A baby panda sneezes and becomes an internet sensation."
+      },
+      {
+        title: "Kangaroo Jack",
+        image: "https://m.media-amazon.com/images/M/MV5BMTk1Njg5MjAyOV5BMl5BanBnXkFtZTYwNDAxMDg5._V1_FMjpg_UX1000_.jpg",
+        release: 2003,
+        genre: "Action, Adventure, Comedy",
+        rating: "4.4/10",
+        description: "Two friends chase a kangaroo across the Outback."
+      },
+      {
+        title: "Death Wish 3",
+        image: "https://i.pinimg.com/originals/fc/98/d6/fc98d6c974309afe8e62ed61dd0be7b8.jpg",
+        release: 1985,
+        genre: "Action, Crime, Drama",
+        rating: "5.9/10",
+        description: "A vigilante takes on a gang in a crime-infested neighborhood."
+      },
+      {
+        title: "Deadly Invasion: The Killer Bee Nightmare",
+        image: "https://th.bing.com/th/id/OIP.U3KrFNEHWzx_ASRhJuUHSgHaLH?rs=1&pid=ImgDetMain",
+        release: 1995,
+        genre: "Horror, Sci-Fi",
+        rating: "4.1/10",
+        description: "A town is terrorized by killer bees from South America."
+      },
+      {
+        title: "Summertime Switch",
+        image: "https://th.bing.com/th/id/OIP.grpfRA_eqVfQDf-D7iN7jwHaLH?rs=1&pid=ImgDetMain",
+        release: 1994,
+        genre: "Comedy, Family",
+        rating: "6.3/10",
+        description: "Two boys from different backgrounds switch lives for the summer."
+      },
+      {
+        title: "Fateful Findings",
+        image: "https://th.bing.com/th/id/R.5f905680071fe0152b1a62f3a58ed51e?rik=vIOFcVDxxMi1uA&riu=http%3a%2f%2ffatefulfindings.biz%2ffateful-findings-film-cover.JPG&ehk=MwGSq3e%2bgFQfYvokV2XAi5NjyV9PR7sfYTcKQN99plU%3d&risl=&pid=ImgRaw&r=0",
+        release: 2013,
+        genre: "Drama, Fantasy, Thriller",
+        rating: "4.0/10",
+        description: "A man discovers a magical stone and uncovers government corruption."
+      },
+      {
+        title: "Space Truckers",
+        image: "https://th.bing.com/th/id/OIP.e8IXnMPnoXwQDsInfrwmyQHaLH?rs=1&pid=ImgDetMain",
+        release: 1996,
+        genre: "Comedy, Sci-Fi",
+        rating: "5.2/10",
+        description: "Truckers transport cargo through space, facing various dangers."
+      },
+      {
+        title: "Double Down",
+        image: "https://images-na.ssl-images-amazon.com/images/M/MV5BMGRmZGM3NmUtOTI1ZS00YmE3LWFiZjYtNGYzZDkyYjAzYzUxXkEyXkFqcGdeQXVyNDQzMDg4Nzk@._V1_UY1200_CR110,0,630,1200_AL_.jpg",
+        release: 2005,
+        genre: "Action, Drama, Thriller",
+        rating: "2.0/10",
+        description: "A former military operative becomes a professional gambler and vigilante."
+      },
+      {
+        title: "I Am Here...",
+        image: "https://th.bing.com/th/id/OIP.qqZM5zf3FPvYe7qKdASEqAHaEK?rs=1&pid=ImgDetMain",
+        release: 2014,
+        genre: "Drama, Sci-Fi",
+        rating: "5.0/10",
+        description: "A woman suffering from multiple personality disorder struggles with her identity."
+      },
+      {
+        title: "Frankenhooker",
+        image: "https://image.tmdb.org/t/p/original/s8Oubzkc2pPdOdj4D23ljZSKRbg.jpg",
+        release: 1990,
+        genre: "Comedy, Horror, Sci-Fi",
+        rating: "6.1/10",
+        description: "A medical student reanimates his dead girlfriend using body parts from prostitutes."
+      },
+      {
+        title: "Tammy and the T-Rex",
+        image: "https://th.bing.com/th/id/OIP.q3pvSUW3VvOl6kXmwO0NlgHaK-?rs=1&pid=ImgDetMain",
+        release: 1994,
+        genre: "Comedy, Fantasy, Sci-Fi",
+        rating: "3.6/10",
+        description: "A teenager's brain is transplanted into an animatronic T-Rex."
+      },
+      {
+        title: "Showgirls",
+        image: "https://upload.wikimedia.org/wikipedia/en/d/d7/Showgirls_%281995_film_poster%29.jpg",
+        release: 1995,
+        genre: "Drama",
+        rating: "4.9/10",
+        description: "A young drifter, Nomi, arrives in Las Vegas to become a dancer and soon sets about clawing and pushing her way to become the top of the Vegas showgirls."
+      },
+      {
+        title: "Tremors",
+        image: "https://upload.wikimedia.org/wikipedia/en/f/f1/Tremors_official_theatrical_poster.jpg",
+        release: 1990,
+        genre: "Comedy, Horror, Sci-Fi",
+        rating: "7.1/10",
+        description: "Natives of a small isolated town defend themselves against strange underground creatures which are killing them one by one."
+      },
+      {
+        title: "Plan 9 From Outer Space",
+        image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Plan_9_Alternative_poster.jpg",
+        release: 1959,
+        genre: "Horror, Sci-Fi",
+        rating: "4.0/10",
+        description: "Aliens resurrect dead humans as zombies and vampires to stop humanity from creating the Solaranite (a sort of sun-driven bomb)."
+      },
+      {
+        title: "Balls of Fury",
+        image: "https://m.media-amazon.com/images/M/MV5BMjA3MDQ1Mzc4N15BMl5BanBnXkFtZTcwODI0NTc0MQ@@._V1_.jpg",
+        release: 2007,
+        genre: "Comedy, Crime, Sport",
+        rating: "5.2/10",
+        description: "Down-and-out former professional ping-pong phenom, Randy Daytona, is sucked into a maelstrom when FBI Agent Ernie Rodriguez recruits him for a secret mission."
+      },
+      {
+        title: "Asterix & Obelix: The Middle Kingdom",
+        image: "https://upload.wikimedia.org/wikipedia/en/e/e2/Asterix_%26_Obelix_-_The_Middle_Kingdom_%28poster%29.jpg",
+        release: 2023,
+        genre: "Animation, Action, Adventure",
+        rating: "5.3/10",
+        description: "The only daughter of the Chinese emperor Han Xuandi, escapes from a strict prince and seeks help from the Gauls and the two brave warriors Asterix and Obelix."
+      },
+      {
+        title: "Cherry Falls",
+        image: "https://upload.wikimedia.org/wikipedia/en/9/98/Cherry_Falls_film.jpg",
+        release: 2000,
+        genre: "Horror, Mystery, Thriller",
+        rating: "5.2/10",
+        description: "In the small town of Cherry Falls, a psychotic murderer is killing off the virgins of the local high school."
+      },
+      {
+        title: "Night of the Comet",
+        image: "https://upload.wikimedia.org/wikipedia/en/f/ff/NightoftheCometPoster.jpg",
+        release: 1984,
+        genre: "Comedy, Horror, Sci-Fi",
+        rating: "6.4/10",
+        description: "A comet wipes out most of life on Earth, leaving two Valley Girls fighting against cannibal zombies and a sinister group of scientists."
+      },
+      {
+        title: "The Hot Chick",
+        image: "https://m.media-amazon.com/images/I/710cn5qOtuL._AC_UF1000,1000_QL80_.jpg",
+        release: 2002,
+        genre: "Comedy, Fantasy",
+        rating: "5.5/10",
+        description: "An attractive and popular teenager who is mean-spirited toward others finds herself in the body of an older man and must find a way to get back to her original body."
+      },
+      {
+        title: "Rubber",
+        image: "https://m.media-amazon.com/images/M/MV5BZmVkZDUxYjgtNTI0OC00M2E1LWE2ZmQtZGIxMmYxODJjYTZhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
+        release: 2010,
+        genre: "Comedy, Horror, Sci-Fi",
+        rating: "5.8/10",
+        description: "A homicidal car tire, discovering it has destructive psionic power, sets its sights on a desert town once a mysterious woman becomes its obsession."
+      },
+      {
+        title: "Weekend at Bernie’s",
+        image: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11733_p_v8_ag.jpg",
+        release: 1989,
+        genre: "Adventure, Comedy, Crime",
+        rating: "6.4/10",
+        description: "Two young employees discover their boss is dead but pretend he's alive to keep the weekend party going at his beach house."
+      },
+      {
+        title: "Dead & Breakfast",
+        image: "https://m.media-amazon.com/images/I/81+ESBeLF0L._AC_UF894,1000_QL80_.jpg",
+        release: 2004,
+        genre: "Comedy, Fantasy, Horror",
+        rating: "5.8/10",
+        description: "A group of friends staying at a bed and breakfast find themselves in a zombie-infested town."
+      },
+      {
+        title: "Club Dread",
+        image: "https://m.media-amazon.com/images/M/MV5BMjExNDgxMjEwNl5BMl5BanBnXkFtZTcwMTYzNzQyMQ@@._V1_FMjpg_UX1000_.jpg",
+        release: 2004,
+        genre: "Comedy, Horror, Thriller",
+        rating: "5.6/10",
+        description: "A serial killer stalks guests at an island resort themed around a slasher movie franchise."
+      },
+      {
+        title: "Bubba Ho-Tep",
+        image: "https://m.media-amazon.com/images/M/MV5BODk2OGY3ZTItMDJiNi00MzU4LTkyY2EtODczZjE1MjVhYjY0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
+        release: 2002,
+        genre: "Comedy, Fantasy, Horror",
+        rating: "7.0/10",
+        description: "An elderly Elvis Presley teams up with a black man who believes himself to be JFK to battle an ancient Egyptian mummy."
+      },
+      {
+        title: "Spice World",
+        image: "https://m.media-amazon.com/images/M/MV5BY2FiZjA1ODQtOWNjMC00ZmM4LThiNjktZmQ3YjBhMGQ2NzI2XkEyXkFqcGdeQXVyODU4NTYwMDA@._V1_.jpg",
+        release: 1997,
+        genre: "Comedy, Family, Music",
+        rating: "3.4/10",
+        description: "A comedic glimpse into the world of the Spice Girls as they prepare for a major concert."
+      },
+      {
+        title: "Poultrygeist: Night of the Chicken Dead",
+        image: "https://m.media-amazon.com/images/M/MV5BOWE2YWMwMDktMjgyZC00OTEyLTkzMGYtNWQ3NTZiNGZmZmQwXkEyXkFqcGdeQXVyNjE5MjUyOTM@._V1_FMjpg_UX1000_.jpg",
+        release: 2006,
+        genre: "Comedy, Horror, Musical",
+        rating: "6.2/10",
+        description: "Fast-food workers battle zombie chickens infused with a deadly alien virus."
+      },
+      {
+        title: "Serial Mom",
+        image: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15527_p_v8_ac.jpg",
+        release: 1994,
+        genre: "Comedy, Crime, Horror",
+        rating: "6.6/10",
+        description: "A seemingly perfect suburban mother turns into a homicidal maniac when anyone threatens her family's happiness."
+      },
+      {
+        title: "Orca",
+        image: "https://play-lh.googleusercontent.com/NHHqhx3JaaXxCVxjhqYaTYHeJwJHt1BcT-NtiWNRbqti9Crcbc61jdlCp_4bBv-d1myh",
+        release: 1977,
+        genre: "Adventure, Drama, Horror",
+        rating: "5.7/10",
+        description: "A vengeful killer whale goes on a rampage after witnessing the death of its mate and unborn calf."
+      },
+      {
+        title: "Cool as Ice",
+        image: "https://m.media-amazon.com/images/M/MV5BNzU4Mzg3MjYtNmNiNS00Y2Q5LWFlMTYtMWUzOTVmMjhmZmM2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+        release: 1991,
+        genre: "Comedy, Music, Romance",
+        rating: "2.9/10",
+        description: "A rapper on a motorcycle falls for a small-town girl, leading to a clash with her disapproving father."
+      },
+      {
+        title: "Mortal Kombat",
+        image: "https://upload.wikimedia.org/wikipedia/en/f/fb/Mortal_Kombat_poster.jpg",
+        release: 1995,
+        genre: "Action, Adventure, Fantasy",
+        rating: "5.8/10",
+        description: "Fighters from Earth defend against an invasion from the Outworld in a martial arts tournament."
+      },
+      {
+        title: "The Punisher",
+        image: "https://upload.wikimedia.org/wikipedia/en/d/d9/Punisher_ver2.jpg",
+        release: 2004,
+        genre: "Action, Crime, Drama",
+        rating: "6.4/10",
+        description: "A man seeks revenge against the criminals responsible for his family's death, adopting the persona of the Punisher."
+      },
+      {
+        title: "Mixed Nuts",
+        image: "https://m.media-amazon.com/images/I/81bhTOzj6AL._AC_UF894,1000_QL80_.jpg",
+        release: 1994,
+        genre: "Comedy, Drama",
+        rating: "5.4/10",
+        description: "A crisis hotline staff faces various personal and professional challenges during the holiday season."
+      },
+      {
+        title: "Frozen Assets",
+        image: "https://m.media-amazon.com/images/M/MV5BMTk4NTY1MDY3OF5BMl5BanBnXkFtZTcwOTkxNTUxMQ@@._V1_.jpg",
+        release: 1992,
+        genre: "Comedy",
+        rating: "2.9/10",
+        description: "A banker sent to a small town to shut down a failing branch finds himself entangled in local affairs."
+      },
+      {
+        title: "Extreme Movie",
+        image: "https://upload.wikimedia.org/wikipedia/en/d/de/Extreme_Movie.jpg",
+        release: 2008,
+        genre: "Comedy",
+        rating: "3.7/10",
+        description: "A series of comedic vignettes explore themes of teenage sexuality and relationships."
+      },
+      {
+        title: "Disaster Movie",
+        image: "https://upload.wikimedia.org/wikipedia/en/a/af/Disaster_movie.jpg",
+        release: 2008,
+        genre: "Comedy",
+        rating: "1.9/10",
+        description: "A spoof film that parodies various disaster movies and pop culture references."
+      },
+      {
+        title: "Epic Movie",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS009N4W38zuqYdOIIxFq6oIDAbI66bDSRNjvCSvPt4lA&s",
+        release: 2007,
+        genre: "Adventure, Comedy",
+        rating: "2.4/10",
+        description: "A parody film that lampoons popular fantasy and adventure movies."
+      },
+      {
+        title: "Panda Fighter",
+        image: "https://upload.wikimedia.org/wikipedia/en/c/cf/The_Little_Panda_Fighter_%282008%29_DVD_cover.jpg",
+        release: 2010,
+        genre: "Animation, Family",
+        rating: "2.8/10",
+        description: "An animated film about a panda who becomes a kung fu master to protect his village."
+      },
+      {
+        title: "Spider's A Pig's Tale",
+        image: "https://m.media-amazon.com/images/M/MV5BYTZiY2VlYmEtODM1Mi00Y2U0LTkxZGUtMmM5NWM0MGVmNzUxXkEyXkFqcGdeQXVyODIxNjk4NzQ@._V1_.jpg",
+        release: 2006,
+        genre: "Animation, Family",
+        rating: "2.4/10",
+        description: "An animated adventure following a spider who embarks on a journey to rescue his pig friend."
+      },
+      {
+        title: "Brawl Stars",
+        image: "https://static.wikia.nocookie.net/supercell-fanmedia/images/f/f3/Brawl_Stars_The_Movie_Poster.png/revision/latest/thumbnail/width/360/height/360?cb=20210203090040",
+        release: 2022,
+        genre: "Animation, Action, Adventure",
+        rating: "TBA",
+        description: "Plot details are currently unavailable."
+      },
+      {
+        title: "Ratatoing",
+        image: "https://m.media-amazon.com/images/M/MV5BMzgyYjk4MjYtZjdjNS00OWI1LWE3MTMtZjAwNTIzNDhkMmRhXkEyXkFqcGdeQXVyNjk2NDg1NjM@._V1_.jpg",
+        release: 2007,
+        genre: "Animation, Comedy, Family",
+        rating: "1.6/10",
+        description: "An animated film about a group of rats who run a restaurant in competition with a larger establishment."
+      },
+      {
+        title: "Strange Magic",
+        image: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11256537_p_v8_ae.jpg",
+        release: 2015,
+        genre: "Animation, Adventure, Comedy",
+        rating: "5.8/10",
+        description: "A fairy princess must rescue her sister from an evil ruler in this animated musical fantasy filled with magical creatures and music."
+      },
+      {
+        title: "Millionaire Dogs",
+        image: "https://static.wikia.nocookie.net/dubbing9585/images/5/54/Millionaire_dogs_dvd_cover.jpg/revision/latest?cb=20201209153226",
+        release: 2004,
+        genre: "Animation, Family",
+        rating: "2.0/10",
+        description: "Five dogs inherit a fortune from their owner, navigating new challenges and adventures as they adapt to their newfound wealth."
+      },
+      {
+        title: "Speckles: The Tarbosaurus",
+        image: "https://m.media-amazon.com/images/M/MV5BMTY4Nzc5MTYwOF5BMl5BanBnXkFtZTgwNjc0MTAzMjE@._V1_.jpg",
+        release: 2012,
+        genre: "Animation, Adventure, Family",
+        rating: "5.5/10",
+        description: "A young Tarbosaurus embarks on a perilous journey to find his family in this animated adventure, facing numerous dangers along the way."
+      },
+      {
+        title: "A Turtle's Tale: Sammy's Adventures",
+        image: "https://m.media-amazon.com/images/M/MV5BYzliYTFmODUtMGQ1Ny00MGY2LTkwMTUtZjZkOGJhYTVhNzg5XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        release: 2010,
+        genre: "Animation, Adventure, Family",
+        rating: "6.0/10",
+        description: "Follow the life journey of Sammy the sea turtle as he navigates the oceans and encounters various marine creatures."
+      },
+      {
+        title: "Foodfight!",
+        image: "https://upload.wikimedia.org/wikipedia/en/d/d4/Foodfight%21_DVD_cover.jpg",
+        release: 2012,
+        genre: "Animation, Action, Adventure",
+        rating: "1.7/10",
+        description: "Brand mascots come to life in a supermarket after closing hours, embarking on adventures in this poorly received animated film."
+      },
+      {
+        title: "Morbius",
+        image: "https://th.bing.com/th/id/R.f433e88b4941701b220907f1f11b497d?rik=OVnfFntN2eNk6w&pid=ImgRaw&r=0",
+        release: 2022,
+        genre: "Action, Adventure, Fantasy",
+        rating: "5.3/10",
+        description: "Dr. Michael Morbius accidentally transforms into a vampire-like creature while trying to cure his rare blood disease."
+      },
+      {
+        title: "Nadia: The Secret Of Fuzzy",
+        image: "https://th.bing.com/th/id/OIP.RVjgOqFjtzwX7Pos2BcwtQHaKu?rs=1&pid=ImgDetMain",
+        release: 2006,
+        genre: "Family",
+        rating: "6.2/10",
+        description: "A young girl named Nadia discovers a mysterious creature in the forest and embarks on an adventure to protect it from harm."
+      },
+      {
+        title: "The Wicker Man",
+        image: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/The_Wicker_Man_%281973_film%29_UK_poster.jpg/220px-The_Wicker_Man_%281973_film%29_UK_poster.jpg",
+        release: 2006,
+        genre: "Horror, Mystery, Thriller",
+        rating: "3.7/10",
+        description: "A police officer investigates the disappearance of a girl on a remote island with a secretive pagan community."
+      },
+      {
+        title: "Monkey Shines",
+        image: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10955_v_h9_ag.jpg",
+        release: 1988,
+        genre: "Drama, Horror, Sci-Fi",
+        rating: "6.2/10",
+        description: "A quadriplegic man forms a telepathic bond with a trained capuchin monkey, leading to sinister consequences."
+      },
+      {
+        title: "Cellular",
+        image: "https://pics.filmaffinity.com/Cellular-186336043-large.jpg",
+        release: 2004,
+        genre: "Action, Crime, Thriller",
+        rating: "6.5/10",
+        description: "A young man receives a call from a kidnapped woman and embarks on a race against time to save her."
+      },
+      {
+        title: "Insidious",
+        image: "https://m.media-amazon.com/images/M/MV5BOTQyNGY5ZGQtN2E1MC00ZDhkLWJiYWMtMTFjODAwMDFmZDRhXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_.jpg",
+        release: 2010,
+        genre: "Horror, Mystery, Thriller",
+        rating: "6.8/10",
+        description: "A family tries to prevent evil spirits from trapping their comatose child in a realm called The Further."
+      },
+      {
+        title: "Ghost Rider",
+        image: "https://m.media-amazon.com/images/M/MV5BYWM0ZTI4NDItODRjNi00MzM2LWEzMTctNzI3ZjMxODUwNThkXkEyXkFqcGdeQXVyNDI3NjU1NzQ@._V1_.jpg",
+        release: 2007,
+        genre: "Action, Fantasy, Thriller",
+        rating: "5.2/10",
+        description: "Johnny Blaze, a stunt motorcyclist, sells his soul to the devil and transforms into the Ghost Rider to battle evil forces."
+      },
+      {
+        title: "The Box",
+        image: "https://m.media-amazon.com/images/M/MV5BMTI4MDA5NjIwM15BMl5BanBnXkFtZTcwNTA2MjY0Mg@@._V1_.jpg",
+        release: 2009,
+        genre: "Drama, Mystery, Thriller",
+        rating: "5.6/10",
+        description: "A couple receives a mysterious box that grants money at the cost of someone's life each time they press a button."
+      },
+      {
+        title: "Face/Off",
+        image: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p19525_p_v8_af.jpg",
+        release: 1997,
+        genre: "Action, Crime, Sci-Fi",
+        rating: "7.3/10",
+        description: "An FBI agent and a terrorist undergo surgery to assume each other's identities in this high-stakes thriller."
+      },
+      {
+        title: "Shallow Hal",
+        image: "https://upload.wikimedia.org/wikipedia/en/7/7b/Shallowhalmovieposter.jpg",
+        release: 2001,
+        genre: "Comedy, Drama, Fantasy",
+        rating: "6.2/10",
+        description: "A shallow man, after being hypnotized, sees inner beauty in women's outer appearances, changing his perspective on relationships."
+      },
+      {
+        title: "Orphan",
+        image: "https://upload.wikimedia.org/wikipedia/en/4/47/Orphanposter.jpg",
+        release: 2009,
+        genre: "Horror, Mystery, Thriller",
+        rating: "7.0/10",
+        description: "A couple adopts a 9-year-old girl who is not as innocent as she seems, leading to deadly consequences."
+      },
+      {
+        title: "Quarantine",
+        image: "https://m.media-amazon.com/images/M/MV5BMjY0MDgwNTQ4OF5BMl5BanBnXkFtZTcwMzQzNjY3MQ@@._V1_.jpg",
+        release: 2008,
+        genre: "Horror, Mystery, Sci-Fi",
+        rating: "6.0/10",
+        description: "A reporter and her cameraman are trapped in a building quarantined by the CDC after an outbreak of a mysterious virus."
+      },
+      {
+        title: "Deep Blue Sea",
+        image: "https://m.media-amazon.com/images/M/MV5BZDMzZDMwMTgtNjA1Yi00NWJkLWIzMDctNjEwY2EyZDM1ZDMzXkEyXkFqcGdeQXVyNjg0NzkwOTk@._V1_.jpg",
+        release: 1999,
+        genre: "Action, Adventure, Sci-Fi",
+        rating: "5.9/10",
+        description: "Scientists genetically modify sharks to cure Alzheimer's, but the sharks become smarter and more dangerous."
+      },
+      {
+        title: "Swimfan",
+        image: "https://m.media-amazon.com/images/M/MV5BOTUxMzkzMTQtYTI1Zi00NDUxLWI5ODYtNDVkYzM2ZWFlODA3XkEyXkFqcGdeQXVyMTQyMTMwOTk0._V1_.jpg",
+        release: 2002,
+        genre: "Drama, Thriller",
+        rating: "5.0/10",
+        description: "A high school swimmer becomes the object of obsession for a disturbed young woman, leading to fatal consequences."
+      },
+      {
+        title: "2-Headed Shark Attack",
+        image: "https://upload.wikimedia.org/wikipedia/en/d/dd/2HEADEDSHARKATTACKDVD.jpg",
+        release: 2012,
+        genre: "Action, Adventure, Comedy",
+        rating: "2.5/10",
+        description: "A group of students stranded on an island must fend off a genetically mutated shark with two heads."
+      },
+      {
+        title: "2012: Ice Age",
+        image: "https://m.media-amazon.com/images/M/MV5BNDc2ODg2NDM4NF5BMl5BanBnXkFtZTcwNjcyOTIwNQ@@._V1_.jpg",
+        release: 2011,
+        genre: "Action, Adventure, Comedy",
+        rating: "1.8/10",
+        description: "A family struggles to survive as a new ice age is triggered by cataclysmic events."
+      },
+      {
+        title: "Birdemic: Shock and Terror",
+        image: "https://m.media-amazon.com/images/I/71bpg9cZwvL._AC_UF894,1000_QL80_DpWeblab_.jpg",
+        release: 2010,
+        genre: "Horror, Romance, Thriller",
+        rating: "1.8/10",
+        description: "A horde of mutated birds attack a small town in California in this low-budget thriller."
+      },
+      {
+        title: "Chairman of the Board",
+        image: "https://upload.wikimedia.org/wikipedia/en/7/71/Chairman_of_the_Board_poster.jpeg",
+        release: 1998,
+        genre: "Comedy",
+        rating: "2.4/10",
+        description: "A surfer-turned-businessman inherits a failing company and attempts to turn it around."
+      },
+      {
+        title: "Day of the Dead 2: Contagium",
+        image: "https://upload.wikimedia.org/wikipedia/en/3/3e/Dayofthedead2DVDcoverscan.jpg",
+        release: 2005,
+        genre: "Action, Horror, Sci-Fi",
+        rating: "3.8/10",
+        description: "A prequel to George A. Romero's 1985 film that explores the origin of the zombie outbreak."
+      },
+      {
+        title: "Dinoshark",
+        image: "https://upload.wikimedia.org/wikipedia/en/a/ab/Dinoshark_DVD.jpg",
+        release: 2010,
+        genre: "Action, Adventure, Comedy",
+        rating: "3.1/10",
+        description: "A prehistoric shark thawed from its icy prison terrorizes the waters off a Mexican resort."
+      },
+      {
+        title: "Ice Spiders",
+        image: "https://upload.wikimedia.org/wikipedia/en/8/87/Icespidersdvd.jpg",
+        release: 2007,
+        genre: "Horror, Sci-Fi",
+        rating: "4.2/10",
+        description: "A ski team must battle giant spiders created by a government experiment gone wrong."
+      },
+      {
+        title: "Komodo vs. Cobra",
+        image: "https://m.media-amazon.com/images/M/MV5BZDlkYWM0OTAtNTUxOS00YTU4LWI0NTYtOWQ4ZTIxYzgzYThhXkEyXkFqcGdeQXVyNDE5MTU2MDE@._V1_.jpg",
+        release: 2005,
+        genre: "Horror, Sci-Fi",
+        rating: "2.9/10",
+        description: "Residents of an island must survive an encounter with a genetically engineered Komodo dragon and a giant cobra."
+      },
+      {
+        title: "Lawnmower Man 2: Beyond Cyberspace",
+        image: "https://upload.wikimedia.org/wikipedia/en/e/ef/Lawnmower_Man_2.jpg",
+        release: 1996,
+        genre: "Sci-Fi, Thriller",
+        rating: "2.4/10",
+        description: "Hackers attempt to stop a corrupt corporation from controlling a virtual reality world."
+      },
+      {
+        title: "Mega Piranha",
+        image: "https://m.media-amazon.com/images/M/MV5BNjU3ODY2NzMwNV5BMl5BanBnXkFtZTcwNjg4MzI1Mw@@._V1_.jpg",
+        release: 2010,
+        genre: "Action, Adventure, Comedy",
+        rating: "2.4/10",
+        description: "Giant piranhas attack Florida after being accidentally released from a Venezuelan river."
+      },
+      {
+        title: "Mega Python vs. Gatoroid",
+        image: "https://m.media-amazon.com/images/M/MV5BMjEwODY1ODQ3Nl5BMl5BanBnXkFtZTgwMTAyMjM5MTE@._V1_FMjpg_UX1000_.jpg",
+        release: 2011,
+        genre: "Action, Adventure, Comedy",
+        rating: "3.0/10",
+        description: "A battle ensues between giant pythons and alligators in the Florida Everglades."
+      },
+      {
+        title: "Mega Snake",
+        image: "https://upload.wikimedia.org/wikipedia/en/a/a2/Mega_snake_sci_fi_dvd_cover.jpg",
+        release: 2007,
+        genre: "Action, Adventure, Horror",
+        rating: "3.0/10",
+        description: "A giant snake created by toxic waste terrorizes a small town."
+      },
+      {
+        title: "Mega Shark vs. Crocosaurus",
+        image: "https://m.media-amazon.com/images/M/MV5BOTA2MmNjMjgtMTllZC00OGI0LTlhOGItZmE0ZmJmNDMzNWE1XkEyXkFqcGdeQXVyNDE5MTU2MDE@._V1_.jpg",
+        release: 2010,
+        genre: "Action, Adventure, Comedy",
+        rating: "2.5/10",
+        description: "A giant shark battles a colossal crocodile, causing massive destruction."
+      },
+      {
+        title: "Mega Shark vs. Giant Octopus",
+        image: "https://play-lh.googleusercontent.com/ruciddX_vSPiR4L51hFU5cbq6SoR6mJPqtpX5TlXlMqaFhOK1BqIK4-3d1cIpFj-a9q1",
+        release: 2009,
+        genre: "Action, Adventure, Horror",
+        rating: "2.5/10",
+        description: "A prehistoric shark and a giant octopus threaten humanity after being released from ice."
+      },
+      {
+        title: "Pocket Ninjas",
+        image: "https://m.media-amazon.com/images/I/61Zp4-I9QWL._AC_UF894,1000_QL80_.jpg",
+        release: 1997,
+        genre: "Action, Comedy, Family",
+        rating: "1.8/10",
+        description: "Three kids train as ninjas to save their school from bullies."
+      },
+      {
+        title: "Sand Sharks",
+        image: "https://m.media-amazon.com/images/M/MV5BMDE4YjMwNDYtZWQyNC00ZmQ3LThkNzEtZTdjNDM5MDcxNjE1XkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_.jpg",
+        release: 2011,
+        genre: "Action, Adventure, Comedy",
+        rating: "2.7/10",
+        description: "Monstrous sharks that swim through sand terrorize a coastal community."
+      },
+      {
+        title: "Santa and the Ice Cream Bunny",
+        image: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p54397_v_v10_aa.jpg",
+        release: 1972,
+        genre: "Family, Fantasy, Musical",
+        rating: "1.5/10",
+        description: "Santa Claus is stranded in Florida and gets help from children and the Ice Cream Bunny."
+      },
+      {
+        title: "Sharktopus",
+        image: "https://m.media-amazon.com/images/M/MV5BMTc5MTE5MzY2Nl5BMl5BanBnXkFtZTcwMTQ0NzAzOA@@._V1_QL75_UY281_CR5,0,190,281_.jpg",
+        release: 2010,
+        genre: "Action, Adventure, Comedy",
+        rating: "3.3/10",
+        description: "A hybrid creature, part shark and part octopus, goes on a rampage."
+      },
+      {
+        title: "Seventh Moon",
+        image: "https://m.media-amazon.com/images/M/MV5BMjI0NzE2Mzg0OV5BMl5BanBnXkFtZTcwMTMyNDYwNQ@@._V1_.jpg",
+        release: 2008,
+        genre: "Horror, Thriller",
+        rating: "4.7/10",
+        description: "A couple on their honeymoon in China encounter terrifying creatures during the Ghost Festival."
+      },
+      {
+        title: "Superman IV: The Quest for Peace",
+        image: "https://image.tmdb.org/t/p/original/95zlQnGPbt7egI2HaDWri0ZqOSV.jpg",
+        release: 1987,
+        genre: "Action, Adventure, Sci-Fi, Fantasy",
+        rating: "3.7/10",
+        description: "Superman attempts to rid the world of nuclear weapons and clashes with Lex Luthor."
+      },
+      {
+        title: "Swamp Zombies!!!",
+        image: "https://m.media-amazon.com/images/M/MV5BZGVjZmI5MzQtNDQ3NS00YzAyLWJlNDUtYTY3MTZjZjQ3MjBjXkEyXkFqcGdeQXVyNzI0Mzg0OTM@._V1_FMjpg_UX1000_.jpg",
+        release: 2005,
+        genre: "Horror",
+        rating: "3.5/10",
+        description: "Soldiers investigating a biological research facility battle zombies in a swamp."
+      },
+      {
+        title: "The Amazing Bulk",
+        image: "https://m.media-amazon.com/images/M/MV5BMTQ2OTYwMzQwNl5BMl5BanBnXkFtZTgwMzc1NjkyNDE@._V1_.jpg",
+        release: 2012,
+        genre: "Action, Animation, Comedy",
+        rating: "1.7/10",
+        description: "A parody of superhero films, featuring a scientist who transforms into a giant creature."
+      },
+      {
+        title: "The Christmas Shoes",
+        image: "https://m.media-amazon.com/images/M/MV5BNjA0NDQyMDY0MV5BMl5BanBnXkFtZTcwOTExNzY5MQ@@._V1_.jpg",
+        release: 2002,
+        genre: "Drama, Family, Fantasy",
+        rating: "6.9/10",
+        description: "A young boy tries to buy his dying mother a pair of shoes for Christmas."
+      },
+      {
+        title: "The Garbage Pail Kids Movie",
+        image: "https://upload.wikimedia.org/wikipedia/en/e/e5/GarbagePailKidsMoviecover.jpg",
+        release: 1987,
+        genre: "Adventure, Comedy, Family",
+        rating: "2.7/10",
+        description: "Based on the trading cards, the Garbage Pail Kids help a boy overcome bullies."
+      },
+      {
+        title: "The Star Wars Holiday Special",
+        image: "https://image.tmdb.org/t/p/original/eLIKCGIiYVaplbhKFGcPzmiywF2.jpg",
+        release: 1978,
+        genre: "Adventure, Family, Musical",
+        rating: "2.2/10",
+        description: "Han Solo and Chewbacca visit Kashyyyk for Life Day in this infamous holiday special."
+      },
+      {
+        title: "Titanic II",
+        image: "https://m.media-amazon.com/images/M/MV5BZTMxYzQ5MGUtZmNmOS00NjNlLThhMTItZTAwYmM5NDQwMTFkXkEyXkFqcGdeQXVyMTYzNjY3NDMz._V1_.jpg",
+        release: 2010,
+        genre: "Action, Adventure, Drama",
+        rating: "1.6/10",
+        description: "A replica of the RMS Titanic sets out on its maiden voyage and faces disaster."
+      },
+      {
+        title: "Titanic: The Legend Goes On...",
+        image: "https://image.tmdb.org/t/p/original/2l30g3pqpJK2Uhs5TaXl52wLMvl.jpg",
+        release: 2000,
+        genre: "Animation, Adventure, Family",
+        rating: "2.4/10",
+        description: "An animated retelling of the Titanic disaster, featuring love and adventure."
+      },
+      {
+        title: "Arachnoquake",
+        image: "https://m.media-amazon.com/images/M/MV5BMzc4ODJiMjAtYTg2Ny00ZTdjLTllYmEtOWJhOTYyZjQ4OWYyXkEyXkFqcGdeQXVyMjQwMjk0NjI@._V1_FMjpg_UX1000_.jpg",
+        release: 2012,
+        genre: "Action, Adventure, Comedy",
+        rating: "2.8/10",
+        description: "An earthquake releases giant fire-breathing spiders in New Orleans."
+      },
+      {
+        title: "Labyrinth",
+        image: "https://m.media-amazon.com/images/I/71vmjQ338dL._AC_UF894,1000_QL80_.jpg",
+        release: 1986,
+        genre: "Adventure, Family, Fantasy",
+        rating: "7.4/10",
+        description: "A young girl navigates a labyrinth to rescue her brother from the Goblin King."
+      },
+      {
+        title: "Verotika",
+        image: "https://f4.bcbits.com/img/0018381348_10.jpg",
+        release: 2019,
+        genre: "Action, Horror",
+        rating: "3.2/10",
+        description: "A horror anthology based on Glenn Danzig's comics, featuring erotic and horrific tales."
+      },
+      {
+        title: "LAAL SINGH CHADDHA",
+        image: "https://stat4.bollywoodhungama.in/wp-content/uploads/2022/07/Laal-Singh-Chaddha-4.jpg",
+        release: 2022,
+        genre: "Drama",
+        rating: "3.5/10",
+        description: "An Indian remake of Forrest Gump, featuring a man with disabilities discovering life's meanings through war, love, and loss."
+      }
+    ];
+
+    function generateRandomMovie() {
+      const randomIndex = Math.floor(Math.random() * movies.length);
+      const movie = movies[randomIndex];
+
+      document.getElementById('movie-title').textContent = movie.title;
+      document.getElementById('movie-image').src = movie.image;
+      document.getElementById('movie-image').alt = 'Poster of ' + movie.title;
+      document.getElementById('movie-release').textContent = 'Release Year: ' + movie.release;
+      document.getElementById('movie-genre').textContent = 'Genre: ' + movie.genre;
+      document.getElementById('movie-rating').textContent = 'Rating: ' + movie.rating;
+      document.getElementById('movie-description').textContent = movie.description;
+    }
+
+    generateRandomMovie();
+  </script>
+</body>
+
+</html>
