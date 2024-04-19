@@ -1,237 +1,256 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>About</title>
+  <title>About</title>
 
-    <style>
-
-        body {
-            background-image: url('https://i.pinimg.com/736x/fb/c6/af/fbc6af92f34a7b74f1d9faae0af8a097.jpg');
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
-            color: white;
-        }
-
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-
-        .about-section {
-            margin-top: 50px;
-            margin-left: 25%;
-            width: 50%;
-        }
-
-        .faq-section {
-          
-        text-align:left;
-        margin-top: 20px;
-        margin-left:25%;
-        width: 45%;
-        background-color:#6A3954;
-        color: white;
-        cursor: pointer;
-        padding: 18px;
-        border: none;
-        outline: none;
-        font-size: 20px;
-        overflow:visible;
-        transition: 0.4s;
-      }
-
-      .panel {
-       
-        padding:18px;
-        background-color: #6A3954;
-        overflow: hidden;
-      }
+  <style>
+    body {
+      background-image: url('https://i.pinimg.com/736x/fb/c6/af/fbc6af92f34a7b74f1d9faae0af8a097.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
 
 
-      .active, .faq-section :hover {
-        background-color: #C15565; 
-      }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-      .active, .accordion:hover {
-        background-color: #81415B; 
-      }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 10px;
+    }
 
-      .panel {
-        width: 100%;
-        padding:18px;
-        display: none;
-        background-color: #81415B;
-        overflow: hidden;
-      }
+    .about-section {
+      margin-top: 50px;
+      margin-left: 25%;
+      width: 50%;
+    }
 
-       input[type=text], select, textarea {
-         width: 100%;
-         padding: 12px;
-         border: 1px solid #E9666C;
-         border-radius: 4px;
-         box-sizing: border-box;
-         margin-top: 6px;
-         margin-bottom: 16px;
-         resize: vertical;
-       }
+    .faq-section {
 
-       input[type=submit] {
-         background-color: #81415B;
-         color: white;
-         padding: 12px 20px;
-         border: none;
-         border-radius: 4px;
-         cursor: pointer;
-       }
+      display: flex;
+      flex-direction: column;
+      justify-items: left;
+      text-align: left;
+      margin-top: 20px;
+      margin-left: 25%;
+      width: 45%;
+      background-color: #6A3954;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      border: none;
+      outline: none;
+      font-size: 20px;
+      overflow: visible;
+      transition: 0.4s;
+    }
 
-       input[type=submit]:hover {
-         background-color: #81415B;
-       }
+    .panel {
 
-       .container1 {
-         width: 45%;
-         margin-left: 25%;
-         border-radius: 5px;
-         background-color: #633853;
-         padding: 20px;
-       }
+      padding: 18px;
+      background-color: #6A3954;
+      overflow: hidden;
+    }
 
-      
 
-        footer {
-            position:bottom;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            text-align: center;
-            color: white;
-        }
-      .fa {
-        padding: 20px;
-        font-size: 30px;
-        width: 50px;
-        text-align: center;
-        text-decoration: none;
-        margin: 5px 2px;
-      }
+    .active,
+    .faq-section :hover {
+      background-color: #C15565;
+    }
 
-      .fa:hover {
-          opacity: 0.7;
-      }
+    .active,
+    .accordion:hover {
+      background-color: #81415B;
+    }
 
-      .fa-facebook {
-        background: #3B5998;
-        color: white;
-      }
+    .panel {
+      width: 100%;
+      padding: 18px;
+      display: none;
+      background-color: #81415B;
+      overflow: hidden;
+    }
 
-      .fa-twitter {
-        background: #55ACEE;
-        color: white;
-      }
-      .fa-instagram {
-        background:hotpink;
-        color: white;
-      }
-      
-    </style>
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #E9666C;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #81415B;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #81415B;
+    }
+
+    .container1 {
+      width: 45%;
+      margin-left: 25%;
+      border-radius: 5px;
+      background-color: #633853;
+      padding: 20px;
+    }
+
+
+
+    footer {
+      position: bottom;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+    }
+
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+
+    .fa-twitter {
+      background: #55ACEE;
+      color: white;
+    }
+
+    .fa-instagram {
+      background: hotpink;
+      color: white;
+    }
+  </style>
 
 </head>
+
 <body>
-    <nav>
-        <div>
-            <a href="index.html">Home</a>
-            <a href="movies.html">Movies</a>
-            <a href="signup.html">Signup/Login</a>
-        </div>
-        <div>
-            <a href="#about">About Us</a>
-            <a href="#faq">FAQ</a>
-             <a href="#contact">Contact Us</a>
-        </div>
-    </nav>
-    <div class="about-section">
-        <h2 id=about>About Us</h2>
-
-      <p align ="justify"> Spending Summer Vacation endlessly scrolling through the perpetual lists of streaming platforms is exhausting. Hours on end, trying to find the perfect movie, only to STILL not find anything to watch! But on top of that, streaming platforms like Netflix and Disney+ charge an arm and a leg. Being indecisive and “broke” should not fuel the struggle of trying to relax and decompress during the Summer Vacation. <br><br> WatchIt! aims to not only supply you with the best movies but also where to watch them for free.And moments where you really just can’t decide is not a problem anymore, where WatchIt! provides you with some of the most random, strange and hilarious movies you’ve probably never even heard of. Our random movie generator combats decision fatigue and is a source of endless fun for the summer; providing users with an endless supply of movies, so bad, they’re good. </p>
-    </div> <br><br><br><br>
-
-
-
-    <b><h2 style=  "margin-left: 25%" , id=faq>FAQ</h2></b>
-    <div class="faq-section">
-
-      
-      <button class="faq-section">Do I need to have an account to use the website?</button>
-      <div class="panel">
-        <p>No, you do not need an account to access the website.</p>
-      </div>
-
-      <button class="faq-section">What kind of content is available on the website?</button>
-      <div class="panel">
-        <p>The website offers a variety of content, including popular movies, classic films, and the top 10 movie releases for the current year</p>
-      </div>
-
-      <button class="faq-section">Does it cost to use the site?</button>
-      <div class="panel">
-        <p>No, we pride ourselves on being free and providing users with free sites to enojy their films.</p>
-      </div>
-
-      <button class="faq-section">What kind of movies does the generator have?</button>
-      <div class="panel">
-        <p> The movies generator contains 100 of the weirdest and obscure movies we could find.</p>
-      </div>
-
-      <button class="faq-section">Where does your data come from?</button>
-      <div class="panel">
-        <p>Mainly our data comes from IMDb and Rotten Tomatoes</p>
-      </div>
+  <nav>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="signup.html">Signup/Login</a>
     </div>
+    <div>
+      <a href="#about">About Us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </nav>
+  <div class="about-section">
+    <h2 id=about>About Us</h2>
+
+    <p align="justify"> Spending Summer Vacation endlessly scrolling through the perpetual lists of streaming platforms
+      is exhausting. Hours on end, trying to find the perfect movie, only to STILL not find anything to watch! But on
+      top of that, streaming platforms like Netflix and Disney+ charge an arm and a leg. Being indecisive and “broke”
+      should not fuel the struggle of trying to relax and decompress during the Summer Vacation. <br><br> WatchIt! aims
+      to not only supply you with the best movies but also where to watch them for free.And moments where you really
+      just can’t decide is not a problem anymore, where WatchIt! provides you with some of the most random, strange and
+      hilarious movies you’ve probably never even heard of. Our random movie generator combats decision fatigue and is a
+      source of endless fun for the summer; providing users with an endless supply of movies, so bad, they’re good. </p>
+  </div> <br><br><br><br>
+
+
+
+  <b>
+    <h2 style="margin-left: 25%" , id=faq>FAQ</h2>
+  </b>
+  <div class="faq-section">
+
+
+    <button class="faq-section">Do I need to have an account to use the website?</button>
+    <div class="panel">
+      <p>No, you do not need an account to access the website.</p>
+    </div>
+
+    <button class="faq-section">What kind of content is available on the website?</button>
+    <div class="panel">
+      <p>The website offers a variety of content, including popular movies, classic films, and the top 10 movie releases
+        for the current year</p>
+    </div>
+
+    <button class="faq-section">Does it cost to use the site?</button>
+    <div class="panel">
+      <p>No, we pride ourselves on being free and providing users with free sites to enojy their films.</p>
+    </div>
+
+    <button class="faq-section">What kind of movies does the generator have?</button>
+    <div class="panel">
+      <p> The movies generator contains 100 of the weirdest and obscure movies we could find.</p>
+    </div>
+
+    <button class="faq-section">Where does your data come from?</button>
+    <div class="panel">
+      <p>Mainly our data comes from IMDb and Rotten Tomatoes</p>
+    </div>
+  </div>
 
 
   <br><br><br><br><br><br>
-    <div class="container1">
+  <div class="container1">
 
-       <h2>Contact Us</h2>
+    <h2>Contact Us</h2>
 
-          <form id="contactForm" action="#" method="POST">
+    <form id="contactForm" action="#" method="POST">
 
-           <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-            </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
 
-            <br><br>
-            <div class="form-group">
-              <label for="message">Message/Question:</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+      <br><br>
+      <div class="form-group">
+        <label for="message">Message/Question:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
-<br><br><br>
-  
-    <footer>
-      <a href="https://www.facebook.com/wonderpets" class="fa fa-facebook"></a>
-      <a href="https://x.com/WonderPetsReal" class="fa fa-twitter"></a>
-      <a href="https://www.instagram.com/thewonderpetsofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="fa fa-instagram"></a>
-    </footer>
+  <br><br><br>
+
+  <footer>
+    <a href="https://www.facebook.com/wonderpets" class="fa fa-facebook"></a>
+    <a href="https://x.com/WonderPetsReal" class="fa fa-twitter"></a>
+    <a href="https://www.instagram.com/thewonderpetsofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+      class="fa fa-instagram"></a>
+  </footer>
 
 
   <script>
@@ -240,7 +259,7 @@
     var i;
 
     for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
+      acc[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
         if (panel.style.display === "block") {
@@ -252,6 +271,10 @@
     }
 
 
+  </script>
+</body>
+
+</html>
   </script> 
 </body>
 </html>
